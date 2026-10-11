@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#dfe2f0", "surface-container": "#1b2029", "primary": "#dbfcff", "on-error-container": "#ffdad6", "inverse-on-surface": "#2c303b", "on-secondary-fixed-variant": "#004e5c", "surface-container-low": "#171c25", "tertiary-fixed": "#ffd9dc", "primary-fixed": "#7df4ff", "on-tertiary-fixed-variant": "#910030", "surface-tint": "#00dbe9", "tertiary-fixed-dim": "#ffb2ba", "on-error": "#690005", "error": "#ffb4ab", "on-tertiary": "#670020", "background": "#0f131d", "secondary-container": "#03b5d3", "on-primary-container": "#006970", "surface-container-highest": "#31353f", "on-surface": "#dfe2f0", "on-primary-fixed": "#002022", "secondary-fixed-dim": "#4cd7f6", "surface-dim": "#0f131d", "surface-container-lowest": "#0a0e17", "on-primary-fixed-variant": "#004f54", "inverse-primary": "#006970", "on-secondary-container": "#00424e", "tertiary-container": "#ffcdd1", "secondary-fixed": "#acedff", "secondary": "#4cd7f6", "on-tertiary-container": "#be0042", "on-primary": "#00363a", "on-secondary": "#003640", "on-tertiary-fixed": "#400011", "on-secondary-fixed": "#001f26", "on-background": "#dfe2f0", "error-container": "#93000a", "surface-variant": "#31353f", "surface-bright": "#353944", "on-surface-variant": "#b9cacb", "surface-container-high": "#262a34", "primary-fixed-dim": "#00dbe9", "surface": "#0f131d", "outline": "#849495", "primary-container": "#00f0ff", "outline-variant": "#3b494b", "tertiary": "#fff3f3" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.25rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin-desktop": "1.5rem", "gutter-desktop": "1rem", "margin": "1rem", "space-xl": "2rem" }, "fontFamily": { "label-md": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "label-caps": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"], "headline-md": ["Inter"], "telemetry-md": ["JetBrains Mono"], "telemetry-lg": ["JetBrains Mono"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Inter"], "headline-lg": ["Inter"], "headline-xl-mobile": ["Inter"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }], "telemetry-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/40 z-50 flex flex-col justify-between select-none"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-md border-b border-outline-variant/30 flex items-center gap-space-sm bg-surface-container-low/40"><div class="w-8 h-8 rounded bg-surface-container-highest border border-primary-container/40 flex items-center justify-center text-primary-container shadow-[0_0_8px_rgba(0,240,255,0.15)]"><span class="material-symbols-outlined text-[20px]">shield</span></div><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-primary-container tracking-wider truncate">ROADSHIELD // PILOT v2.4</span><span class="font-telemetry-sm text-[9px] text-on-surface-variant truncate uppercase tracking-tight">CIVIC SAFETY COMMAND // METRO CENTRAL</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-1" data-active-classes="bg-surface-container-high text-primary-container border-l-2 border-primary-container shadow-[inset_0_0_12px_rgba(0,240,255,0.06)]"><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="command-overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Command Overview</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-risk-map" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">location_on</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Live Risk Map</span></div><span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-error-container text-on-error-container border border-error/40">18</span></a><a aria-current="page" class="group flex items-center justify-between px-space-sm py-space-xs rounded transition-all bg-surface-container-high text-primary-container border-l-2 border-primary-container shadow-[inset_0_0_12px_rgba(0,240,255,0.06)]" data-path="report-a-hazard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Report a Hazard</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reports-and-complaints" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Reports & Complaints</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="hotspot-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bolt</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Hotspot Analytics</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="response-operations" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Response Operations</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="road-safety-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Road Safety Analytics</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="alerts-and-notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Alerts & Notifications</span></div><span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary border border-secondary-container/40">3</span></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings-and-system-configuration" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Settings & Config</span></div></a></nav></div><div class="p-space-md border-t border-outline-variant/30 bg-surface-container-low/30 space-y-2"><div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant"><span>SYSTEM TELEMETRY</span><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span></div><div class="space-y-1.5 font-telemetry-sm text-[10px]"><div class="flex justify-between items-center text-on-surface-variant"><span>LiDAR ARRAY</span><span class="text-primary font-semibold">99.2% NOMINAL</span></div><div class="flex justify-between items-center text-on-surface-variant"><span>DASHCAMS ACTIVE</span><span class="text-primary font-semibold">142/150</span></div><div class="flex justify-between items-center text-on-surface-variant"><span>311 CIVIC FEED</span><span class="text-secondary font-semibold">SYNCING...</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low border border-outline-variant/40 rounded px-space-sm py-1.5"><span class="material-symbols-outlined text-primary-container text-[16px]">corporate_fare</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface uppercase">Ward 4: Metro Central</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-[16px]">search</span><input class="bg-surface-container-lowest border border-outline-variant/40 rounded pl-8 pr-12 py-1.5 font-telemetry-sm text-telemetry-sm text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container w-72 lg:w-96" placeholder="Search hazards, coordinates, unit IDs..." type="text"/><span class="absolute right-2 font-telemetry-sm text-[10px] px-1 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low border border-primary-container/30 rounded px-space-sm py-1"><span class="material-symbols-outlined text-primary-container text-[14px]">speed</span><span class="font-telemetry-sm text-telemetry-sm text-primary-container">GIS LATENCY: 14ms</span></div><div class="hidden lg:flex items-center gap-space-xs bg-error-container/20 border border-error/50 rounded px-space-sm py-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-error uppercase">AI DETECTOR: ACTIVE</span></div><button class="relative p-1.5 rounded bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/40 text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute -top-1 -right-1 font-telemetry-sm text-[9px] px-1 rounded bg-error text-on-error font-bold">5</span></button><a class="flex items-center gap-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps px-space-sm py-2 rounded font-bold uppercase tracking-wider hover:bg-primary-fixed-dim transition-all shadow-[0_0_10px_rgba(0,240,255,0.25)]" data-path="report-a-hazard" href="#"><span class="material-symbols-outlined text-[16px]">add_alert</span><span>+ Report Hazard</span></a><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold leading-tight">Elena Vance</div><div class="font-telemetry-sm text-[10px] text-on-surface-variant leading-tight">Operations Lead</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-telemetry-sm text-on-primary text-[11px] font-bold ring-1 ring-primary-container/50">EV</div></div></div></header><main class="relative w-full pt-16 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Live Connectivity Ribbon -->
+<div class="w-full bg-surface-container-lowest px-margin-desktop py-space-sm flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs font-telemetry-sm text-telemetry-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="text-primary-container font-semibold" id="conn-status-label">NETWORK: CONNECTED</span>
+</div>
+<div class="hidden sm:block h-3 w-1 bg-surface-variant"></div>
+<div class="flex items-center gap-space-xs font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-secondary">cloud_done</span>
+<span>OFFLINE QUEUE: <span class="text-primary font-semibold" id="queue-count">1 PENDING</span></span>
+</div>
+<div class="hidden md:block h-3 w-1 bg-surface-variant"></div>
+<div class="hidden md:flex items-center gap-space-xs font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary-fixed-dim">sync</span>
+<span>AUTO-SYNC: ACTIVE</span>
+</div>
+<div class="hidden lg:block h-3 w-1 bg-surface-variant"></div>
+<div class="hidden lg:flex items-center gap-space-xs font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-outline">lock</span>
+<span>LOCAL STORAGE: AES-256</span>
+</div>
+</div>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors text-on-surface font-telemetry-sm text-[11px] uppercase tracking-wider shadow-sm" id="toggle-offline-btn">
+<span class="material-symbols-outlined text-[16px] text-secondary">airplanemode_active</span>
+<span>Simulate Offline Mode (Airplane Test)</span>
+</button>
+</div>
+<!-- Page Title & Header Banner -->
+<div class="w-full bg-surface-container-low px-margin-desktop py-space-lg flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-primary-container text-on-primary uppercase font-bold tracking-widest shadow-[0_0_8px_rgba(0,240,255,0.2)]">PROTOCOL INTAKE // 409-B</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant uppercase tracking-tight">RAPID CIVIC INCIDENT LOG</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight">REPORT A ROAD SAFETY HAZARD</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Rapid intake protocol for municipal infrastructure hazards, road structural defects, and high-risk vehicular conflict corridors. Automatically syncs to field dispatcher queues.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest p-space-sm rounded shadow-sm">
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">ACTIVE SENSOR SWEEP</span>
+<span class="font-telemetry-sm text-telemetry-sm text-primary font-bold">WARD 04 // 40.7128° N, 74.0060° W</span>
+</div>
+</div>
+</div>
+<!-- Main Multi-Column Content Area -->
+<div class="w-full px-margin-desktop py-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: Wizard Form (LG: 8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Stepper Indicator -->
+<div class="bg-surface-container-low rounded p-space-md shadow-sm">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm text-center">
+<!-- Step 1 -->
+<div class="flex flex-col items-center gap-1.5 p-space-xs rounded bg-surface-container-high shadow-[0_0_10px_rgba(0,240,255,0.08)]">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary-container text-on-primary font-telemetry-sm text-[12px] font-bold">1</div>
+<span class="font-label-caps text-[11px] text-primary-container uppercase font-bold tracking-wider">Hazard Category</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant uppercase">Selected (1)</span>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center gap-1.5 p-space-xs rounded bg-surface-container-high shadow-[0_0_10px_rgba(0,240,255,0.08)]">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-primary-container text-on-primary font-telemetry-sm text-[12px] font-bold">2</div>
+<span class="font-label-caps text-[11px] text-primary-container uppercase font-bold tracking-wider">Location & GPS</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant uppercase">Locked (±2.4m)</span>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center gap-1.5 p-space-xs rounded bg-surface-container opacity-80">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-surface-variant text-on-surface font-telemetry-sm text-[12px] font-bold">3</div>
+<span class="font-label-caps text-[11px] text-on-surface uppercase font-bold tracking-wider">Evidence & Risk</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant uppercase">Critical</span>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center gap-1.5 p-space-xs rounded bg-surface-container opacity-60">
+<div class="flex items-center justify-center w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant font-telemetry-sm text-[12px] font-bold">4</div>
+<span class="font-label-caps text-[11px] text-on-surface-variant uppercase font-bold tracking-wider">Review & Dispatch</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant uppercase">Awaiting Submission</span>
+</div>
+</div>
+</div>
+<!-- SECTION 1: Hazard Category Selection -->
+<div class="bg-surface-container-low rounded p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-sm text-[11px] font-bold">1</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-wider">Select Primary Hazard Class</h2>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary-container uppercase">TAP TO SELECT</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-sm" id="hazard-cards-grid">
+<!-- Card 1: Selected Pothole -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container hover:bg-surface-container-high transition-all flex flex-col justify-between gap-space-md relative shadow-[0_0_14px_rgba(0,240,255,0.18)]" data-hazard="pothole" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">build</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-primary-container text-[20px]">check_circle</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-primary-container tracking-wider uppercase mb-1">Pothole / Void Collapse</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Deep crater, broken asphalt, exposed rebar causing blowout risk.</p>
+</div>
+</button>
+<!-- Card 2: Blindspot -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="blindspot" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Blind Intersection</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Obstructed line-of-sight, blind curb corner, or hidden merge.</p>
+</div>
+</button>
+<!-- Card 3: Pedestrian Crosswalk -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="pedestrian" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">directions_walk</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Unsafe Ped Crossing</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Faded zebra paint, missing flashing beacon, or high school zone hazard.</p>
+</div>
+</button>
+<!-- Card 4: Speeding Hotspot -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="speeding" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Reckless Speed Zone</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Chronic drag racing, extreme arterial speeding, or red-light violations.</p>
+</div>
+</button>
+<!-- Card 5: Missing Sign -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="signage" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">traffic</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Missing / Obscured Sign</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Fallen Stop sign, vandalized yield placard, or tree overgrowth.</p>
+</div>
+</button>
+<!-- Card 6: Lighting Failure -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="lighting" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Dark Corridor / Outage</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Non-functional high-mast light luminaires, blackout intersections.</p>
+</div>
+</button>
+<!-- Card 7: Debris Obstruction -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="debris" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Fallen Debris / Cargo</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Downed tree branch, oil slick spill, loose gravel, or detached metal.</p>
+</div>
+</button>
+<!-- Card 8: Near-Miss Hotspot -->
+<button class="hazard-card text-left p-space-md rounded bg-surface-container-lowest hover:bg-surface-container transition-all flex flex-col justify-between gap-space-md relative" data-hazard="nearmiss" type="button">
+<div class="flex items-center justify-between w-full">
+<div class="w-8 h-8 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</div>
+<span class="indicator-icon material-symbols-outlined text-outline-variant text-[20px]">radio_button_unchecked</span>
+</div>
+<div>
+<div class="font-label-caps text-label-caps font-bold text-on-surface tracking-wider uppercase mb-1">Frequent Near-Miss</div>
+<p class="font-body-sm text-[11px] leading-tight text-on-surface-variant">Recurring pedestrian/vehicle close call or erratic merge pattern.</p>
+</div>
+</button>
+</div>
+</div>
+<!-- SECTION 2: Precise Location Picker -->
+<div class="bg-surface-container-low rounded p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-sm text-[11px] font-bold">2</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-wider">Geospatial Telemetry & Coordinates</h2>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-primary px-space-sm py-0.5 rounded bg-surface-container font-semibold">RTK DGPS ACCURACY: ±2.4m</span>
+</div>
+<!-- Location Search Bar & GPS Trigger -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-sm">
+<div class="md:col-span-8 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-primary-container text-[18px]">pin_drop</span>
+<input class="w-full bg-surface-container-lowest text-on-surface pl-10 pr-4 py-2.5 rounded font-telemetry-sm text-telemetry-sm focus:outline-none shadow-sm" placeholder="Search address, nearest junction, or landmark..." type="text" value="Central Market Concourse & 4th St (Opposite Metro Pillar #12)"/>
+</div>
+<button class="md:col-span-4 flex items-center justify-center gap-space-xs px-space-md py-2.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary-container font-label-caps text-label-caps uppercase font-bold tracking-wider transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">my_location</span>
+<span>Use My GPS Fix</span>
+</button>
+</div>
+<!-- Interactive Dark Mini-Map Component -->
+<div class="relative w-full h-64 rounded overflow-hidden shadow-md">
+<div class="w-full h-full bg-cover bg-center" data-location="Central Market Concourse and 4th St, Metro Central" style="background-image: url('https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg')"></div>
+<!-- Tactical Map HUD Overlays -->
+<div class="absolute inset-0 bg-surface-container-lowest/20 pointer-events-none"></div>
+<!-- Crosshair Center Reticle -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative flex items-center justify-center">
+<span class="w-10 h-10 rounded-full border border-primary-container/40 animate-ping absolute"></span>
+<div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center shadow-[0_0_12px_rgba(0,240,255,0.4)]">
+<span class="material-symbols-outlined text-primary-container text-[24px]">crisis_alert</span>
+</div>
+</div>
+</div>
+<!-- Bottom Coordinates Overlay Ribbon -->
+<div class="absolute bottom-2 left-2 right-2 bg-surface-container-lowest/90 backdrop-blur-sm p-space-sm rounded flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[16px]">satellite_alt</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface font-semibold">LAT: 40.7128° N • LON: 74.0060° W</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">ELEV: 24m • BEARING: 182° S</span>
+<span class="px-1.5 py-0.5 rounded bg-primary text-on-primary font-telemetry-sm text-[9px] font-bold">LOCKED</span>
+</div>
+</div>
+</div>
+<!-- Pre-filled Ward and Corridor Selection -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Ward Jurisdiction</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded font-telemetry-sm text-telemetry-sm appearance-none focus:outline-none shadow-sm">
+<option selected="">Ward 04 - Commercial Corridor & Concourse</option>
+<option>Ward 01 - Downtown Civic Core</option>
+<option>Ward 02 - North Harbor Logistics Sector</option>
+<option>Ward 03 - West River Residential Belt</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Roadway Functional Class</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest text-on-surface px-space-md py-2 rounded font-telemetry-sm text-telemetry-sm appearance-none focus:outline-none shadow-sm">
+<option selected="">Major Urban Arterial (4-Lane Divided)</option>
+<option>Local Residential Feeder Street</option>
+<option>Bicycle Priority Shared Lane</option>
+<option>Interstate Highway Ramp Transit</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[16px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Problem Description & Severity -->
+<div class="bg-surface-container-low rounded p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-sm text-[11px] font-bold">3</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-wider">Hazard Description & Threat Severity</h2>
+</div>
+<!-- Severity Selector Pills -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Hazard Risk Level / Dispatch Urgency</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm" id="severity-selector">
+<!-- Low -->
+<button class="severity-pill p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container text-center flex flex-col items-center gap-1 transition-all" data-severity="low" type="button">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-tint"></span>
+<span class="font-label-caps text-[11px] uppercase font-bold text-on-surface">Low Priority</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant">Non-urgent repair</span>
+</button>
+<!-- Moderate -->
+<button class="severity-pill p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container text-center flex flex-col items-center gap-1 transition-all" data-severity="moderate" type="button">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-caps text-[11px] uppercase font-bold text-on-surface">Moderate</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant">Impairs flow</span>
+</button>
+<!-- High -->
+<button class="severity-pill p-space-sm rounded bg-surface-container-lowest hover:bg-surface-container text-center flex flex-col items-center gap-1 transition-all" data-severity="high" type="button">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="font-label-caps text-[11px] uppercase font-bold text-on-surface">High Hazard</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant">Active vehicle hazard</span>
+</button>
+<!-- Critical Emergency (Selected) -->
+<button class="severity-pill p-space-sm rounded bg-error-container text-on-error-container text-center flex flex-col items-center gap-1 transition-all shadow-[0_0_12px_rgba(255,51,102,0.25)]" data-severity="critical" type="button">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<span class="font-label-caps text-[11px] uppercase font-bold text-on-error-container">Critical Emergency</span>
+<span class="font-telemetry-sm text-[9px] text-error">Immediate collision risk</span>
+</button>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Incident Context & Physical Dimensions</label>
+<span class="font-telemetry-sm text-[10px] text-on-surface-variant">MAX 500 CHARACTERS</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest text-on-surface p-space-md rounded font-body-md text-body-md focus:outline-none shadow-sm leading-relaxed" placeholder="Describe the road danger, approximate dimensions, vehicle impact, and immediate risk to cyclists or crossing pedestrians..." rows="4">Pothole measures approximately 3.5 feet across with a severe 8-inch depression in the central lane. Several sedans experienced heavy rim strikes during morning peak transit. Broken jagged asphalt pieces are scattering into the adjacent bicycle lane.</textarea>
+</div>
+</div>
+<!-- SECTION 4: Evidence & Photo Upload -->
+<div class="bg-surface-container-low rounded p-space-lg flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-xs">
+<span class="flex items-center justify-center w-6 h-6 rounded bg-primary-container text-on-primary font-telemetry-sm text-[11px] font-bold">4</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-wider">Field Evidence & Verification Assets</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Photo Preview Container (6 cols) -->
+<div class="md:col-span-6 flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Primary Incident Photograph</span>
+<div class="relative w-full h-48 rounded overflow-hidden bg-surface-container-lowest group shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of a severe deep asphalt pothole on a rain-slicked city road at dusk, showing water accumulation, exposed fractured road foundation, street marker lines, cool cyan and slate blue urban evening lighting, sharp tactile realism" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA24MhhBGlQ455U1Bc8iYQ7xDjI5N2_Muu61z1AA3pUDjs3Ai3Z9ujUxOUqSs5wp0M4ME2qN1l4kJ44_Lj64nuJk5DqvikIEODX846GIOPurTDiUNf-TsIMeN3aecjbomh4tx4hxUz5zx8qC8Kflla8ncyqsdVez7U3HMccbH8GfezisIK6uNC06LDj5igwud8xAdAmtGqjoiFMS3-jon8iDQDEIL4S3nTcXidX1SrBNltBYNdSeZY"/>
+<!-- Telemetry Metadata Tag Overlaid on Photo -->
+<div class="absolute bottom-2 left-2 right-2 bg-surface-container-lowest/85 backdrop-blur-md p-1.5 rounded flex items-center justify-between text-on-surface font-telemetry-sm text-[10px]">
+<span class="text-primary-container font-semibold">GPS: 40.7128° N, 74.0060° W</span>
+<span class="text-on-surface-variant">TIMESTAMP: 10:14:22 EST</span>
+</div>
+<button class="absolute top-2 right-2 p-1 rounded bg-surface-container-lowest/80 text-on-surface hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Drag and Drop Target & Audio Voice Note (6 cols) -->
+<div class="md:col-span-6 flex flex-col justify-between gap-space-sm">
+<!-- Secondary upload slot -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Attach Secondary Asset</span>
+<div class="h-24 rounded bg-surface-container-lowest flex flex-col items-center justify-center gap-1 cursor-pointer hover:bg-surface-container transition-colors p-2 text-center">
+<span class="material-symbols-outlined text-primary-container text-[24px]">cloud_upload</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface font-semibold">DROP COLLISION CAM CLIP OR JPEG</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant">Accepts MP4, PNG, HEIC up to 25MB</span>
+</div>
+</div>
+<!-- Voice Note Recorder Component -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button class="w-9 h-9 rounded-full bg-error-container text-on-error-container flex items-center justify-center animate-pulse shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] text-primary-container uppercase font-bold">VOICE LOG ATTACHED</span>
+<span class="font-telemetry-sm text-[11px] text-on-surface">inspector_audio_memo.wav (0:18s)</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Submission Action Row -->
+<div class="bg-surface-container-low rounded p-space-md flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-telemetry-sm text-telemetry-sm uppercase tracking-wider transition-colors shadow-sm" type="button">
+            Save Draft Offline
+          </button>
+<button class="px-space-md py-2.5 rounded text-on-surface-variant hover:text-on-surface font-telemetry-sm text-telemetry-sm uppercase transition-colors" type="reset">
+            Reset Intake
+          </button>
+</div>
+<button class="flex-1 sm:flex-none flex items-center justify-center gap-space-sm px-space-xl py-3 rounded bg-primary-container text-on-primary font-label-caps text-[12px] font-bold uppercase tracking-wider hover:bg-primary-fixed-dim transition-all shadow-[0_0_16px_rgba(0,240,255,0.35)]" id="submit-triage-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Submit to Municipal Triage Queue</span>
+</button>
+</div>
+</div>
+<!-- RIGHT COLUMN: Offline Queue & Civic Accountability Panel (LG: 4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Panel 1: Offline Resiliency & Cache Telemetry -->
+<div class="bg-surface-container-low rounded p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">storage</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase font-bold tracking-wider">Offline Cache Resiliency</span>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-telemetry-sm text-[10px] text-primary-container font-semibold">IndexedDB ACTIVE</span>
+</div>
+<!-- Storage Bar Meter -->
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col gap-1.5">
+<div class="flex justify-between items-center font-telemetry-sm text-[10px]">
+<span class="text-on-surface-variant uppercase">Local Vector Cache Allocation</span>
+<span class="text-primary font-semibold">1.4 MB / 50.0 MB (2.8%)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[3%] rounded-full shadow-[0_0_8px_rgba(0,240,255,0.4)]"></div>
+</div>
+</div>
+<!-- Offline Pending Drafts Card -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">Pending Local Draft Queue (1)</span>
+<button class="font-telemetry-sm text-[10px] text-primary-container hover:underline">Force Sync Now</button>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">pending_actions</span>
+<div class="flex flex-col">
+<span class="font-telemetry-sm text-[11px] font-bold text-on-surface">#DRAFT-042: North Ave Signal Defect</span>
+<span class="font-telemetry-sm text-[10px] text-on-surface-variant">Ward 02 • Saved 12m ago</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors">sync</span>
+</div>
+</div>
+</div>
+<!-- Panel 2: Civic Accountability Roadmap & SLA -->
+<div class="bg-surface-container-low rounded p-space-md flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase font-bold tracking-wider">What Happens Next? (Civic SLA)</span>
+</div>
+<span class="font-telemetry-sm text-[10px] text-primary-fixed-dim font-bold">CHARTER 11</span>
+</div>
+<!-- Roadmap Timeline Steps -->
+<div class="relative pl-6 space-y-4">
+<!-- Flow Vertical Connecting Line -->
+<div class="absolute left-2.5 top-2 bottom-2 w-0.5 bg-surface-variant"></div>
+<!-- Stage 1 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_6px_rgba(0,240,255,0.4)]"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[11px] font-bold text-on-surface uppercase">1. AI & Officer Verification</span>
+<span class="font-telemetry-sm text-[10px] text-primary-container font-semibold">< 4 Hours SLA</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+              Automated computer vision analyzes photo geometry and depth. Municipal desk operator authorizes dispatch priority code.
+            </p>
+</div>
+<!-- Stage 2 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[11px] font-bold text-on-surface uppercase">2. Crew Work-Order Routed</span>
+<span class="font-telemetry-sm text-[10px] text-on-surface-variant font-semibold">< 24 Hours SLA</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+              District Maintenance Fleet vehicle receives coordinates, asphalt tonnage estimate, and traffic dampening permit.
+            </p>
+</div>
+<!-- Stage 3 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[11px] font-bold text-on-surface uppercase">3. Proof-of-Fix Upload</span>
+<span class="font-telemetry-sm text-[10px] text-on-surface-variant font-semibold">Field Completion</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+              Repair team captures post-patch high-resolution LiDAR scan and compaction telemetry to verify structural safety.
+            </p>
+</div>
+<!-- Stage 4 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-surface-variant"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-[11px] font-bold text-on-surface uppercase">4. Citizen Receipt & Closure</span>
+<span class="font-telemetry-sm text-[10px] text-primary font-semibold">Risk Cleared</span>
+</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-relaxed">
+              Incident ticket closes; reporting citizen receives SMS confirmation link showing before-and-after photo evidence.
+            </p>
+</div>
+</div>
+</div>
+<!-- Panel 3: Emergency Hotline Critical Callout Box -->
+<div class="bg-error-container/20 rounded p-space-md flex flex-col gap-space-sm shadow-[0_0_14px_rgba(255,51,102,0.12)]">
+<div class="flex items-center gap-space-sm text-error">
+<span class="material-symbols-outlined text-[22px] animate-pulse">crisis_alert</span>
+<span class="font-label-caps text-label-caps font-bold tracking-wider uppercase">Active Danger Disclaimer</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface leading-snug">
+          Immediate active vehicle collision, severe roadway obstruction, exposed gas lines, or downed electrical wires?
+        </p>
+<div class="bg-surface-container-lowest p-space-sm rounded flex items-center justify-between mt-1">
+<div class="flex items-center gap-space-xs font-telemetry-md text-telemetry-md text-error font-bold">
+<span class="material-symbols-outlined text-[18px]">phone_in_talk</span>
+<span>DIAL 911 / METRO DISPATCH</span>
+</div>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase">TOLL FREE</span>
+</div>
+</div>
+<!-- Panel 4: Quick Telemetry Reference Card -->
+<div class="bg-surface-container-low rounded p-space-md flex flex-col gap-space-xs">
+<div class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">Active Municipal Node</div>
+<div class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold">METRO CENTRAL URBAN SAFETY GATEWAY</div>
+<div class="flex items-center justify-between font-telemetry-sm text-[10px] text-on-surface-variant pt-1">
+<span>LATENCY: 18ms</span>
+<span class="text-primary-container">TLS 1.3 // SECURE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="../roadshield-core.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!window.RoadShield) return;
+
+    // 1. Setup Global Header, Role Switcher, & Navigation
+    RoadShield.setupGlobalHeaderAndNav('report-a-hazard');
+
+    // Selected state trackers
+    let selectedCategory = 'pothole';
+    let selectedSeverity = 'critical';
+
+    // Interactive Hazard Selection
+    const hazardCards = document.querySelectorAll('.hazard-card');
+    hazardCards.forEach(card => {
+      card.addEventListener('click', () => {
+        hazardCards.forEach(c => {
+          c.classList.remove('bg-surface-container', 'shadow-[0_0_14px_rgba(0,240,255,0.18)]');
+          c.classList.add('bg-surface-container-lowest');
+          const icon = c.querySelector('.indicator-icon');
+          if (icon) {
+            icon.textContent = 'radio_button_unchecked';
+            icon.classList.remove('text-primary-container');
+            icon.classList.add('text-outline-variant');
+          }
+          const title = c.querySelector('.font-label-caps');
+          if (title) {
+            title.classList.remove('text-primary-container');
+            title.classList.add('text-on-surface');
+          }
+        });
+
+        card.classList.remove('bg-surface-container-lowest');
+        card.classList.add('bg-surface-container', 'shadow-[0_0_14px_rgba(0,240,255,0.18)]');
+        const icon = card.querySelector('.indicator-icon');
+        if (icon) {
+          icon.textContent = 'check_circle';
+          icon.classList.remove('text-outline-variant');
+          icon.classList.add('text-primary-container');
+        }
+        const title = card.querySelector('.font-label-caps');
+        if (title) {
+          title.classList.remove('text-on-surface');
+          title.classList.add('text-primary-container');
+        }
+
+        selectedCategory = card.getAttribute('data-hazard') || 'pothole';
+      });
+    });
+
+    // Interactive Severity Selection
+    const severityPills = document.querySelectorAll('.severity-pill');
+    severityPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        severityPills.forEach(p => {
+          p.classList.remove('bg-error-container', 'text-on-error-container', 'shadow-[0_0_12px_rgba(255,51,102,0.25)]', 'bg-surface-container-high');
+          p.classList.add('bg-surface-container-lowest');
+        });
+        pill.classList.remove('bg-surface-container-lowest');
+        selectedSeverity = pill.dataset.severity || 'moderate';
+        if (selectedSeverity === 'critical') {
+          pill.classList.add('bg-error-container', 'text-on-error-container', 'shadow-[0_0_12px_rgba(255,51,102,0.25)]');
+        } else {
+          pill.classList.add('bg-surface-container-high');
+        }
+      });
+    });
+
+    // GPS Fix Trigger
+    const gpsBtn = document.querySelector('button:has(.material-symbols-outlined:contains("my_location")), button[type="button"]');
+    document.querySelectorAll('button').forEach(btn => {
+      if (btn.textContent.includes('Use My GPS Fix')) {
+        btn.addEventListener('click', () => {
+          const coords = '40.7134° N, 74.0052° W';
+          const ribbon = document.querySelector('.absolute.bottom-2.left-2 .font-telemetry-sm');
+          if (ribbon) ribbon.textContent = `LAT: 40.7134° N • LON: 74.0052° W [LIVE LOCK]`;
+          RoadShield.showToast('High-Precision GPS coordinates locked (±1.8m accuracy)', 'my_location');
+        });
+      }
+    });
+
+    // Render Offline Draft Queue List in Right Sidebar
+    const renderOfflineDraftList = () => {
+      const queueContainer = document.querySelector('.lg\\:col-span-4 .flex.flex-col.gap-2');
+      if (!queueContainer) return;
+
+      const queue = RoadShield.getOfflineQueue();
+      const countHeader = queueContainer.querySelector('.font-label-caps');
+      if (countHeader) countHeader.textContent = `Pending Local Draft Queue (${queue.length})`;
+
+      // Keep header and sync button, clear previous items
+      const existingCards = queueContainer.querySelectorAll('.bg-surface-container-lowest');
+      existingCards.forEach(c => c.remove());
+
+      if (queue.length === 0) {
+        const emptyDiv = document.createElement('div');
+        emptyDiv.className = 'bg-surface-container-lowest p-space-sm rounded text-on-surface-variant font-telemetry-sm text-[11px] text-center';
+        emptyDiv.textContent = 'No offline drafts pending sync.';
+        queueContainer.appendChild(emptyDiv);
+      } else {
+        queue.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'bg-surface-container-lowest p-space-sm rounded flex items-center justify-between hover:bg-surface-container transition-colors group cursor-pointer';
+          card.innerHTML = `
+            <div class="flex items-start gap-space-sm">
+              <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">pending_actions</span>
+              <div class="flex flex-col">
+                <span class="font-telemetry-sm text-[11px] font-bold text-on-surface">#${item.id}: ${item.categoryLabel}</span>
+                <span class="font-telemetry-sm text-[10px] text-on-surface-variant">${item.location} • Offline Draft</span>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors">sync</span>
+          `;
+          card.onclick = () => {
+            if (RoadShield.isOfflineMode()) {
+              RoadShield.showToast('Network is offline. Reconnect before syncing.', 'warning');
+            } else {
+              RoadShield.syncOfflineQueue();
+              RoadShield.showToast(`Synced draft #${item.id} to central dispatch!`, 'cloud_done');
+              renderOfflineDraftList();
+            }
+          };
+          queueContainer.appendChild(card);
+        });
+      }
+    };
+
+    renderOfflineDraftList();
+
+    // Force Sync link in right sidebar
+    const forceSyncLink = document.querySelector('button:contains("Force Sync Now"), button.font-telemetry-sm.text-primary-container');
+    document.querySelectorAll('button').forEach(b => {
+      if (b.textContent.includes('Force Sync Now')) {
+        b.addEventListener('click', () => {
+          if (RoadShield.isOfflineMode()) {
+            RoadShield.showToast('Please reconnect network first.', 'warning');
+          } else {
+            const res = RoadShield.syncOfflineQueue();
+            RoadShield.showToast(`Synchronized ${res.syncedCount} queued reports.`, 'cloud_done');
+            renderOfflineDraftList();
+          }
+        });
+      }
+    });
+
+    // Save Draft Offline Button
+    document.querySelectorAll('button').forEach(btn => {
+      if (btn.textContent.includes('Save Draft Offline')) {
+        btn.addEventListener('click', () => {
+          submitHazardForm(true);
+        });
+      }
+    });
+
+    // Form Submission Action
+    const submitBtn = document.getElementById('submit-triage-btn');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        submitHazardForm(false);
+      });
+    }
+
+    function submitHazardForm(forceOffline) {
+      const addressInput = document.querySelector('input[placeholder*="Search address"]');
+      const location = addressInput && addressInput.value.trim() ? addressInput.value.trim() : 'Ward 4 Concourse & 4th St';
+      const descInput = document.querySelector('textarea');
+      const description = descInput && descInput.value.trim() ? descInput.value.trim() : 'Roadway hazard requiring rapid triage and structural inspection.';
+      
+      const wardSelect = document.querySelectorAll('select')[0];
+      const ward = wardSelect ? (wardSelect.value.split('-')[0].trim() || 'Ward 4') : 'Ward 4';
+
+      // Was offline forced by clicking Save Draft or via Airplane mode?
+      const wasOffline = forceOffline || RoadShield.isOfflineMode();
+      if (forceOffline && !RoadShield.isOfflineMode()) {
+        RoadShield.setOfflineMode(true);
+      }
+
+      // Show spinner on submit button
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>ENCRYPTING & DISPATCHING...</span>';
+      }
+
+      setTimeout(() => {
+        const newReport = RoadShield.createReport({
+          category: selectedCategory,
+          title: `${RoadShield.getCategoryLabel(selectedCategory)}`,
+          location: location,
+          ward: ward,
+          severity: selectedSeverity,
+          description: description,
+          speedContext: 'arterial',
+          pedestrianExposure: selectedSeverity === 'critical' ? 'high' : 'moderate',
+          schoolZone: false,
+          coordinates: { lat: 40.7134, lng: -74.0052, x: 690, y: 440 }
+        });
+
+        if (submitBtn) {
+          submitBtn.innerHTML = `<span class="material-symbols-outlined text-[18px]">verified</span><span>LOGGED // #${newReport.id}</span>`;
+          submitBtn.classList.add('bg-surface-container-highest', 'text-primary-container');
+        }
+
+        renderOfflineDraftList();
+
+        // Show Success Confirmation Modal
+        showSuccessModal(newReport, wasOffline);
+      }, 700);
+    }
+
+    function showSuccessModal(report, isOffline) {
+      const modal = document.createElement('div');
+      modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface-container-lowest/80 backdrop-blur-md';
+      modal.innerHTML = `
+        <div class="bg-surface-container-low border border-primary-container/40 p-space-lg rounded-xl max-w-lg w-full shadow-2xl flex flex-col gap-4 animate-scale">
+          <div class="flex items-center justify-between pb-2 border-b border-outline-variant/30">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary-container text-[24px]">verified</span>
+              <span class="font-headline-sm text-headline-sm text-primary font-bold">HAZARD INTAKE CONFIRMED</span>
+            </div>
+            <span class="font-telemetry-sm text-[11px] px-2 py-0.5 rounded ${isOffline ? 'bg-error-container text-on-error-container' : 'bg-primary-container text-on-primary'} font-bold">
+              ${isOffline ? 'OFFLINE QUEUED' : 'DISPATCHED'}
+            </span>
+          </div>
+
+          <div class="space-y-2 font-telemetry-sm text-telemetry-sm">
+            <div class="flex justify-between items-center bg-surface-container p-2 rounded">
+              <span class="text-on-surface-variant">Ticket Tracking ID:</span>
+              <span class="text-primary font-bold text-[14px]">#${report.id}</span>
+            </div>
+            <div class="flex justify-between items-center bg-surface-container p-2 rounded">
+              <span class="text-on-surface-variant">Explainable Risk Score:</span>
+              <span class="${report.riskBreakdown.tierColor} font-bold">${report.riskScore} / 100 (${report.riskTier})</span>
+            </div>
+            <div class="flex justify-between items-center bg-surface-container p-2 rounded">
+              <span class="text-on-surface-variant">Location:</span>
+              <span class="text-on-surface truncate max-w-[220px]">${report.location}</span>
+            </div>
+            <div class="flex justify-between items-center bg-surface-container p-2 rounded">
+              <span class="text-on-surface-variant">Civic Protocol Status:</span>
+              <span class="text-secondary font-semibold">${report.statusLabel}</span>
+            </div>
+          </div>
+
+          <p class="font-body-sm text-[12px] text-on-surface-variant leading-relaxed">
+            ${isOffline 
+              ? 'Your report has been saved into the encrypted local offline draft cache. When you reconnect or trigger force sync, it will automatically transmit to Ward dispatch.' 
+              : 'Your hazard report has been ingested into the RoadShield central audit log and prioritized for verification review.'}
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-outline-variant/30">
+            <a href="../reports_and_complaints_management/code.html" class="flex-1 py-2 px-3 rounded bg-primary-container text-on-primary font-label-caps text-label-caps font-bold text-center hover:bg-primary-fixed-dim transition-all shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+              Open in Audit Console
+            </a>
+            <a href="../live_risk_map_hotspot_gis/code.html" class="flex-1 py-2 px-3 rounded bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-caps text-label-caps font-bold text-center transition-all">
+              View on Live GIS Map
+            </a>
+            <button id="close-modal-btn" class="py-2 px-3 rounded bg-surface-container hover:bg-surface-container-highest text-on-surface font-label-caps text-label-caps transition-all">
+              File Another
+            </button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      modal.querySelector('#close-modal-btn').onclick = () => {
+        modal.remove();
+        window.location.reload();
+      };
+    }
+  });
+</script></main></div></body></html>

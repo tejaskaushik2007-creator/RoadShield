@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_dashboard" name="shell-type"/>
+  <title>RoadShield — Turn Road Safety Data into Action // Tactical Civic Command</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+  <style>
+    @layer base {
+      html { font-size: 15px; }
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    /* RoadShield Legibility & Ergonomics */
+    .text-\[9px\], [class*="text-[9px]"] { font-size: 11.5px !important; line-height: 16px !important; }
+    .text-\[10px\], [class*="text-[10px]"] { font-size: 12.5px !important; line-height: 17px !important; }
+    .text-\[11px\], [class*="text-[11px]"] { font-size: 13.5px !important; line-height: 18px !important; }
+    .text-\[12px\], [class*="text-[12px]"] { font-size: 14px !important; line-height: 20px !important; }
+    .font-telemetry-sm { font-size: 13px !important; }
+    .font-telemetry-md { font-size: 15px !important; }
+    .font-telemetry-lg { font-size: 24px !important; }
+    .font-label-caps { font-size: 11.5px !important; letter-spacing: 0.06em !important; }
+    
+    img { max-height: 190px !important; object-fit: cover !important; border-radius: 6px !important; }
+    .h-64 { height: 180px !important; }
+    .h-48 { height: 150px !important; }
+    
+    table th { font-size: 11.5px !important; padding: 10px 12px !important; }
+    table td { font-size: 13.5px !important; padding: 10px 12px !important; }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "inverse-surface": "#dfe2f0",
+            "surface-container": "#1b2029",
+            "primary": "#dbfcff",
+            "on-error-container": "#ffdad6",
+            "inverse-on-surface": "#2c303b",
+            "on-secondary-fixed-variant": "#004e5c",
+            "surface-container-low": "#171c25",
+            "tertiary-fixed": "#ffd9dc",
+            "primary-fixed": "#7df4ff",
+            "on-tertiary-fixed-variant": "#910030",
+            "surface-tint": "#00dbe9",
+            "tertiary-fixed-dim": "#ffb2ba",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "on-tertiary": "#670020",
+            "background": "#0f131d",
+            "secondary-container": "#03b5d3",
+            "on-primary-container": "#006970",
+            "surface-container-highest": "#31353f",
+            "on-surface": "#dfe2f0",
+            "on-primary-fixed": "#002022",
+            "secondary-fixed-dim": "#4cd7f6",
+            "surface-dim": "#0f131d",
+            "surface-container-lowest": "#0a0e17",
+            "on-primary-fixed-variant": "#004f54",
+            "inverse-primary": "#006970",
+            "on-secondary-container": "#00424e",
+            "tertiary-container": "#ffcdd1",
+            "secondary-fixed": "#acedff",
+            "secondary": "#4cd7f6",
+            "on-tertiary-container": "#be0042",
+            "on-primary": "#00363a",
+            "on-secondary": "#003640",
+            "on-tertiary-fixed": "#400011",
+            "on-secondary-fixed": "#001f26",
+            "on-background": "#dfe2f0",
+            "error-container": "#93000a",
+            "surface-variant": "#31353f",
+            "surface-bright": "#353944",
+            "on-surface-variant": "#b9cacb",
+            "surface-container-high": "#262a34",
+            "primary-fixed-dim": "#00dbe9",
+            "surface": "#0f131d",
+            "outline": "#849495",
+            "primary-container": "#00f0ff",
+            "outline-variant": "#3b494b",
+            "tertiary": "#fff3f3"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-lg": "1.25rem",
+            "space-xs": "0.25rem",
+            "space-md": "0.75rem",
+            "space-sm": "0.5rem",
+            "gutter": "0.75rem",
+            "margin-desktop": "1.5rem",
+            "gutter-desktop": "1rem",
+            "margin": "1rem",
+            "space-xl": "2rem"
+          },
+          fontFamily: {
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-caps": ["JetBrains Mono"],
+            "telemetry-sm": ["JetBrains Mono"],
+            "headline-md": ["Inter"],
+            "telemetry-md": ["JetBrains Mono"],
+            "telemetry-lg": ["JetBrains Mono"],
+            "headline-sm": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-xl": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-xl-mobile": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface-container-lowest font-body-md text-on-surface antialiased">
+  <!-- SIDEBAR NAVIGATION -->
+  <aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/40 z-50 flex flex-col justify-between select-none">
+    <div class="flex flex-col flex-1 min-h-0">
+      <div class="h-16 px-space-md border-b border-outline-variant/30 flex items-center gap-space-sm bg-surface-container-low/40">
+        <div class="w-8 h-8 rounded bg-surface-container-highest border border-primary-container/40 flex items-center justify-center text-primary-container shadow-[0_0_8px_rgba(0,240,255,0.15)]">
+          <span class="material-symbols-outlined text-[20px]">shield</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-caps text-label-caps text-primary-container tracking-wider truncate">ROADSHIELD // PILOT v2.4</span>
+          <span class="font-telemetry-sm text-[9px] text-on-surface-variant truncate uppercase tracking-tight">CIVIC SAFETY COMMAND // METRO CENTRAL</span>
+        </div>
+      </div>
+      <nav class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-1">
+        <a aria-current="page" class="group flex items-center justify-between px-space-sm py-space-xs rounded transition-all bg-surface-container-high text-primary-container border-l-2 border-primary-container shadow-[inset_0_0_12px_rgba(0,240,255,0.06)]" data-path="command-overview" href="index.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">grid_view</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Command Overview</span>
+          </div>
+        </a>
+        <a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-risk-map" href="./stitch_roadshield_civic_safety_portal/live_risk_map_hotspot_gis/code.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">location_on</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Live Risk Map</span>
+          </div>
+          <span id="nav-hotspots-count" class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-error-container text-on-error-container border border-error/40">3</span>
+        </a>
+        <a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="report-a-hazard" href="./stitch_roadshield_civic_safety_portal/report_a_hazard_offline_queue/code.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">warning</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Report a Hazard</span>
+          </div>
+        </a>
+        <a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reports-and-complaints" href="./stitch_roadshield_civic_safety_portal/reports_and_complaints_management/code.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">description</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Reports & Complaints</span>
+          </div>
+        </a>
+        <a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="response-operations" href="./stitch_roadshield_civic_safety_portal/response_management_operations/code.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">local_shipping</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Response Operations</span>
+          </div>
+        </a>
+        <a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="road-safety-analytics" href="./stitch_roadshield_civic_safety_portal/road_safety_analytics_performance/code.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">bar_chart</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Road Safety Analytics</span>
+          </div>
+        </a>
+        <a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="alerts-and-notifications" href="./stitch_roadshield_civic_safety_portal/reports_and_complaints_management/code.html">
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">notifications</span>
+            <span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Alerts & Notifications</span>
+          </div>
+          <span id="nav-alerts-count" class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary border border-secondary-container/40">2</span>
+        </a>
+      </nav>
+    </div>
+    <!-- Sidebar Telemetry -->
+    <div class="p-space-md border-t border-outline-variant/30 bg-surface-container-low/30 space-y-2">
+      <div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant">
+        <span>SYSTEM TELEMETRY</span>
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+      </div>
+      <div class="space-y-1.5 font-telemetry-sm text-[10px]">
+        <div class="flex justify-between items-center text-on-surface-variant">
+          <span>LiDAR ARRAY</span>
+          <span class="text-primary font-semibold">99.2% NOMINAL</span>
+        </div>
+        <div class="flex justify-between items-center text-on-surface-variant">
+          <span>AI RISK SCORER</span>
+          <span class="text-primary font-semibold">ACTIVE (EXPLAINABLE)</span>
+        </div>
+        <div class="flex justify-between items-center text-on-surface-variant">
+          <span>OFFLINE LOCAL PERSISTENCE</span>
+          <span class="text-secondary font-semibold" id="sidebar-storage-status">INITIALIZED</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <div class="pl-72">
+    <!-- TOP HEADER -->
+    <header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-margin-desktop">
+      <div class="flex items-center gap-space-md">
+        <div class="flex items-center gap-space-xs bg-surface-container-low border border-outline-variant/40 rounded px-space-sm py-1.5">
+          <span class="material-symbols-outlined text-primary-container text-[16px]">corporate_fare</span>
+          <span class="font-telemetry-sm text-telemetry-sm text-on-surface uppercase">Ward 4: Metro Central</span>
+          <span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+        </div>
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-[16px]">search</span>
+          <input id="global-search-input" class="bg-surface-container-lowest border border-outline-variant/40 rounded pl-8 pr-12 py-1.5 font-telemetry-sm text-telemetry-sm text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container w-72 lg:w-96" placeholder="Search hazards, coordinates, unit IDs..." type="text"/>
+          <span class="absolute right-2 font-telemetry-sm text-[10px] px-1 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40">⌘K</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low border border-primary-container/30 rounded px-space-sm py-1">
+          <span class="material-symbols-outlined text-primary-container text-[14px]">speed</span>
+          <span class="font-telemetry-sm text-telemetry-sm text-primary-container">GIS LATENCY: 14ms</span>
+        </div>
+        <div class="hidden lg:flex items-center gap-space-xs bg-error-container/20 border border-error/50 rounded px-space-sm py-1">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+          <span class="font-telemetry-sm text-telemetry-sm text-error uppercase">SAFETY SHIELD: ACTIVE</span>
+        </div>
+        <a class="flex items-center gap-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps px-space-sm py-2 rounded font-bold uppercase tracking-wider hover:bg-primary-fixed-dim transition-all shadow-[0_0_10px_rgba(0,240,255,0.25)]" data-path="report-a-hazard" href="./stitch_roadshield_civic_safety_portal/report_a_hazard_offline_queue/code.html">
+          <span class="material-symbols-outlined text-[16px]">add_alert</span>
+          <span>+ Report Hazard</span>
+        </a>
+        <div class="h-6 w-px bg-outline-variant/40"></div>
+        <div class="flex items-center gap-space-sm">
+          <div class="text-right hidden sm:block">
+            <div class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold leading-tight">Elena Vance</div>
+            <div class="font-telemetry-sm text-[10px] text-on-surface-variant leading-tight">Operations Lead</div>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-telemetry-sm text-on-primary text-[11px] font-bold ring-1 ring-primary-container/50">EV</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <main class="relative w-full pt-16 bg-surface-container-lowest min-h-screen">
+      <div class="flex flex-col w-full p-space-md lg:p-margin-desktop gap-space-lg">
+        
+        <!-- TOP BANNER & MODE HUD -->
+        <div class="flex flex-col gap-space-md">
+          <div class="flex flex-wrap items-center justify-between gap-space-sm">
+            <div class="flex items-center gap-space-xs font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+              <span class="text-primary-container font-label-caps text-label-caps">ROADSHIELD COMMAND</span>
+              <span>//</span>
+              <span class="text-on-surface font-semibold">METRO CENTRAL CIVIC SAFETY PORTAL</span>
+              <span>//</span>
+              <span class="text-secondary">SYSTEM TIME: LIVE</span>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <button id="toggle-offline-btn" class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-container-highest transition-colors text-on-surface font-telemetry-sm text-[11px] uppercase tracking-wider shadow-sm">
+                <span class="material-symbols-outlined text-[16px] text-secondary">airplanemode_active</span>
+                <span>Simulate Offline Mode (Airplane Test)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Headline -->
+          <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-low p-space-lg rounded-xl shadow-xl border border-outline-variant/30">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                <span class="font-label-caps text-label-caps text-primary-container tracking-wider">TACTICAL SITUATIONAL DASHBOARD</span>
+                <span class="font-telemetry-sm text-[10px] px-2 py-0.5 rounded bg-surface-container-highest text-secondary">WARD 4 CENTRAL</span>
+              </div>
+              <h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">TURN ROAD SAFETY DATA INTO ACTION</h1>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-4xl">
+                Real-time civic intelligence: intake citizen hazard feeds, run explainable risk prioritization, dispatch municipal repair teams, and verify field resolutions.
+              </p>
+            </div>
+            <div class="flex items-center gap-space-sm">
+              <a href="./stitch_roadshield_civic_safety_portal/live_risk_map_hotspot_gis/code.html" class="flex items-center gap-2 px-space-md py-2.5 bg-primary-container text-on-primary font-label-caps text-label-caps font-bold tracking-wider rounded shadow-[0_0_15px_rgba(0,240,255,0.25)] hover:bg-primary-fixed-dim transition-all">
+                <span class="material-symbols-outlined text-[18px]">map</span>
+                <span>LAUNCH LIVE RISK MAP</span>
+              </a>
+              <a href="./stitch_roadshield_civic_safety_portal/reports_and_complaints_management/code.html" class="flex items-center gap-2 px-space-md py-2.5 bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-caps text-label-caps font-semibold rounded shadow-sm transition-all">
+                <span class="material-symbols-outlined text-[18px]">assignment</span>
+                <span>AUDIT CONSOLE</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7-POINT CORE KPI STRIP (Computed dynamically from RoadShieldCore) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 gap-space-sm" id="metrics-grid">
+          <!-- Total Reports -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-outline-variant/20">
+            <span class="font-label-caps text-[9px] text-on-surface-variant uppercase tracking-wider">Total Reports</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-total" class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">--</span>
+              <span class="font-telemetry-sm text-[10px] text-on-surface-variant">LOGS</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-secondary mt-1">100% Ingested</span>
+          </div>
+
+          <!-- Active Hazards -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-outline-variant/20">
+            <span class="font-label-caps text-[9px] text-primary-container uppercase tracking-wider flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Active Hazards
+            </span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-active" class="font-telemetry-lg text-telemetry-lg text-primary font-bold">--</span>
+              <span class="font-telemetry-sm text-[10px] text-primary/70">OPEN</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-primary mt-1">Requires Attention</span>
+          </div>
+
+          <!-- Critical Hotspots -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-error/30 shadow-[inset_0_0_12px_rgba(255,51,102,0.1)]">
+            <span class="font-label-caps text-[9px] text-error uppercase tracking-wider flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span> Critical Hotspots
+            </span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-critical" class="font-telemetry-lg text-telemetry-lg text-error font-bold">--</span>
+              <span class="font-telemetry-sm text-[10px] text-error/80">SCORE ≥ 80</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-error mt-1">Immediate Safety Risk</span>
+          </div>
+
+          <!-- Pending Verification -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-outline-variant/20">
+            <span class="font-label-caps text-[9px] text-on-surface-variant uppercase tracking-wider">Pending Verify</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-pending" class="font-telemetry-lg text-telemetry-lg text-secondary-fixed font-bold">--</span>
+              <span class="font-telemetry-sm text-[10px] text-secondary/80">QUEUE</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-secondary mt-1">Needs Officer Sign</span>
+          </div>
+
+          <!-- Active Interventions -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-outline-variant/20">
+            <span class="font-label-caps text-[9px] text-on-surface-variant uppercase tracking-wider">Interventions</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-interventions" class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">--</span>
+              <span class="font-telemetry-sm text-[10px] text-on-surface-variant">TEAMS</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-secondary mt-1">Dispatched to Field</span>
+          </div>
+
+          <!-- Resolved Hazards -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-outline-variant/20">
+            <span class="font-label-caps text-[9px] text-primary-fixed uppercase tracking-wider flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span> Resolved Hazards
+            </span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-resolved" class="font-telemetry-lg text-telemetry-lg text-primary-fixed font-bold">--</span>
+              <span class="font-telemetry-sm text-[10px] text-primary-fixed/80">CERTIFIED</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-primary-fixed mt-1">Evidence Approved</span>
+          </div>
+
+          <!-- Average Response Time -->
+          <div class="bg-surface-container-low p-space-sm rounded flex flex-col justify-between shadow-sm border border-outline-variant/20 col-span-2 sm:col-span-1">
+            <span class="font-label-caps text-[9px] text-on-surface-variant uppercase tracking-wider">Avg Response</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="kpi-response-time" class="font-telemetry-lg text-telemetry-lg text-primary font-bold">3.8h</span>
+              <span class="font-telemetry-sm text-[10px] text-primary/80">SLA: 4.0h</span>
+            </div>
+            <span class="font-telemetry-sm text-[10px] text-primary-fixed mt-1">Within Target (-5%)</span>
+          </div>
+        </div>
+
+        <!-- MAIN SPLIT WORKSPACE: 8 COLS OPERATIONAL LOG + 4 COLS EXPLAINABLE SCORING & ANOMALIES -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+          
+          <!-- LEFT 8 COLUMNS: Active Critical Alerts & Live Report Stream -->
+          <div class="lg:col-span-8 flex flex-col gap-space-lg">
+            
+            <!-- Quick Workflow Tracker Card -->
+            <div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30">
+              <div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/20 mb-space-sm">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-[18px]">schema</span>
+                  <span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">ROADSHIELD END-TO-END CIVIC LIFECYCLE</span>
+                </div>
+                <span class="font-telemetry-sm text-[10px] text-on-surface-variant">STANDARDIZED PROTOCOL</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-center text-[10px] font-telemetry-sm">
+                <div class="p-2 bg-surface-container rounded border border-outline-variant/30">
+                  <span class="block text-primary font-bold">1. CITIZEN INGEST</span>
+                  <span class="text-on-surface-variant text-[9px]">Mobile / Offline Sync</span>
+                </div>
+                <div class="p-2 bg-surface-container rounded border border-outline-variant/30">
+                  <span class="block text-secondary font-bold">2. VERIFICATION</span>
+                  <span class="text-on-surface-variant text-[9px]">Officer Telemetry</span>
+                </div>
+                <div class="p-2 bg-surface-container rounded border border-outline-variant/30">
+                  <span class="block text-error font-bold">3. RISK SCORE</span>
+                  <span class="text-on-surface-variant text-[9px]">Multi-Factor 0-100</span>
+                </div>
+                <div class="p-2 bg-surface-container rounded border border-outline-variant/30">
+                  <span class="block text-primary font-bold">4. DISPATCH</span>
+                  <span class="text-on-surface-variant text-[9px]">Unit Assignment</span>
+                </div>
+                <div class="p-2 bg-surface-container rounded border border-outline-variant/30">
+                  <span class="block text-secondary font-bold">5. FIELD REPAIR</span>
+                  <span class="text-on-surface-variant text-[9px]">In-Transit & Repair</span>
+                </div>
+                <div class="p-2 bg-surface-container rounded border border-outline-variant/30">
+                  <span class="block text-primary-fixed font-bold">6. CERTIFICATION</span>
+                  <span class="text-on-surface-variant text-[9px]">Before/After Signoff</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Recent Reports Stream Table -->
+            <div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-wide">Live Incident Telemetry Feed</h2>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Live civic hazard stream stored in local database.</p>
+                </div>
+                <a href="./stitch_roadshield_civic_safety_portal/reports_and_complaints_management/code.html" class="px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm border border-outline-variant/40 flex items-center gap-1 transition-all">
+                  <span>Manage All Reports</span>
+                  <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+
+              <!-- Table Container -->
+              <div class="overflow-x-auto rounded border border-outline-variant/30">
+                <table class="w-full text-left font-telemetry-sm text-telemetry-sm">
+                  <thead class="bg-surface-container-high text-on-surface-variant font-label-caps text-[10px] uppercase border-b border-outline-variant/40">
+                    <tr>
+                      <th class="py-2.5 px-3">Ticket ID</th>
+                      <th class="py-2.5 px-3">Hazard Category</th>
+                      <th class="py-2.5 px-3">Location & Ward</th>
+                      <th class="py-2.5 px-3 text-center">Risk Score</th>
+                      <th class="py-2.5 px-3">Status</th>
+                      <th class="py-2.5 px-3">Assigned Crew</th>
+                      <th class="py-2.5 px-3 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="overview-reports-table-body" class="divide-y divide-outline-variant/20 bg-surface-container-lowest">
+                    <!-- Hydrated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Demonstration Scenario Walkthrough Card -->
+            <div class="bg-surface-container-low rounded-xl p-space-md border border-primary-container/30 shadow-[inset_0_0_15px_rgba(0,240,255,0.05)]">
+              <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary-container text-[20px]">play_circle</span>
+                  <span class="font-headline-sm text-[15px] text-primary-container font-bold uppercase tracking-wider">HACKATHON DEMO: END-TO-END WORKFLOW RUNNER</span>
+                </div>
+                <span class="font-telemetry-sm text-[10px] px-2 py-0.5 rounded bg-primary-container/20 text-primary-container font-bold">10-STEP SCENARIO</span>
+              </div>
+              <p class="font-body-sm text-[13px] text-on-surface-variant mt-2">
+                Click any step below to navigate directly to the corresponding functional screen and verify the complete civic safety workflow:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 mt-3 font-telemetry-sm text-[11px]">
+                <a href="./stitch_roadshield_civic_safety_portal/report_a_hazard_offline_queue/code.html" class="p-2.5 bg-surface-container rounded hover:bg-surface-container-high border border-outline-variant/30 flex flex-col gap-1 transition-all">
+                  <span class="text-primary font-bold">Step 1: Submit Report</span>
+                  <span class="text-on-surface-variant text-[10px]">Citizen wizard intake + GPS + photo</span>
+                </a>
+                <a href="./stitch_roadshield_civic_safety_portal/reports_and_complaints_management/code.html" class="p-2.5 bg-surface-container rounded hover:bg-surface-container-high border border-outline-variant/30 flex flex-col gap-1 transition-all">
+                  <span class="text-secondary font-bold">Step 2: Verify & Assign</span>
+                  <span class="text-on-surface-variant text-[10px]">Officer triage & department routing</span>
+                </a>
+                <a href="./stitch_roadshield_civic_safety_portal/response_management_operations/code.html" class="p-2.5 bg-surface-container rounded hover:bg-surface-container-high border border-outline-variant/30 flex flex-col gap-1 transition-all">
+                  <span class="text-primary-fixed font-bold">Step 3: Dispatch & Certify</span>
+                  <span class="text-on-surface-variant text-[10px]">Field crew Kanban & photo closure</span>
+                </a>
+                <a href="./stitch_roadshield_civic_safety_portal/road_safety_analytics_performance/code.html" class="p-2.5 bg-surface-container rounded hover:bg-surface-container-high border border-outline-variant/30 flex flex-col gap-1 transition-all">
+                  <span class="text-primary-container font-bold">Step 4: View Analytics</span>
+                  <span class="text-on-surface-variant text-[10px]">Vision Zero SLA & risk charts</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT 4 COLUMNS: Explainable Risk Scorer Module & Hotspot Intelligence -->
+          <div class="lg:col-span-4 flex flex-col gap-space-lg">
+            
+            <!-- Explainable Risk Engine Feature Spotlight -->
+            <div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 flex flex-col gap-3">
+              <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">calculate</span>
+                  <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">EXPLAINABLE RISK ENGINE (0-100)</span>
+                </div>
+                <span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-primary">v2.4 WEIGHTED</span>
+              </div>
+              
+              <div id="selected-risk-spotlight" class="p-3 bg-surface-container rounded border border-outline-variant/30 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-telemetry-sm text-[11px] text-on-surface-variant" id="spotlight-title">TOP CRITICAL NODE: #RS-892</span>
+                  <span class="font-telemetry-lg text-telemetry-lg font-bold text-error" id="spotlight-score">94 / 100</span>
+                </div>
+                <div class="w-full bg-surface-container-highest h-1.5 rounded overflow-hidden">
+                  <div id="spotlight-bar" class="bg-error h-full rounded" style="width: 94%"></div>
+                </div>
+                
+                <!-- Factor breakdown list -->
+                <div class="space-y-1.5 pt-2 text-[11px] font-telemetry-sm" id="spotlight-factors">
+                  <div class="flex justify-between items-center text-on-surface">
+                    <span class="text-on-surface-variant">1. Severity (Collapse/Rebar)</span>
+                    <span class="text-error font-semibold">35 / 35 pts</span>
+                  </div>
+                  <div class="flex justify-between items-center text-on-surface">
+                    <span class="text-on-surface-variant">2. Pedestrian Concourse Exposure</span>
+                    <span class="text-secondary font-semibold">20 / 25 pts</span>
+                  </div>
+                  <div class="flex justify-between items-center text-on-surface">
+                    <span class="text-on-surface-variant">3. Arterial Corridor Speed</span>
+                    <span class="text-primary font-semibold">20 / 20 pts</span>
+                  </div>
+                  <div class="flex justify-between items-center text-on-surface">
+                    <span class="text-on-surface-variant">4. Cluster Recurrence (38 pings)</span>
+                    <span class="text-error font-semibold">19 / 20 pts</span>
+                  </div>
+                </div>
+
+                <div class="p-2 bg-surface-container-lowest rounded text-[10px] font-telemetry-sm text-on-surface-variant leading-tight border border-outline-variant/20 mt-2">
+                  <span class="text-primary font-semibold">Transparency Guarantee:</span> All scoring factors are computed deterministically from verified telemetry to prevent black-box prioritization.
+                </div>
+              </div>
+            </div>
+
+            <!-- Hazard Categories Distribution -->
+            <div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 flex flex-col gap-3">
+              <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+                <span class="font-label-caps text-label-caps text-primary tracking-wider uppercase">Hazard Class Distribution</span>
+                <span class="font-telemetry-sm text-[10px] text-on-surface-variant" id="hazard-total-sub">6 Active</span>
+              </div>
+              <div class="space-y-2 text-[11px] font-telemetry-sm" id="category-distribution-bars">
+                <!-- Hydrated dynamically -->
+              </div>
+            </div>
+
+            <!-- Offline Queue Quick Widget -->
+            <div class="bg-surface-container-low rounded-xl p-space-md border border-outline-variant/30 flex flex-col gap-3">
+              <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[18px]">cloud_sync</span>
+                  <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">OFFLINE QUEUE STATUS</span>
+                </div>
+                <span id="queue-badge-widget" class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface">0 PENDING</span>
+              </div>
+              <p class="font-body-sm text-[12px] text-on-surface-variant">
+                Reports submitted while connectivity is disrupted are held in client AES-256 localStorage draft vaults and can be synchronized upon network restoration.
+              </p>
+              <div class="flex gap-2">
+                <button id="sync-now-btn" class="flex-1 py-1.5 px-3 rounded bg-primary-container text-on-primary font-telemetry-sm text-[11px] font-bold shadow-sm hover:bg-primary-fixed-dim transition-all flex items-center justify-center gap-1">
+                  <span class="material-symbols-outlined text-[15px]">sync</span>
+                  <span>SYNC QUEUE NOW</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- LOAD ROADSHIELD CORE -->
+  <script src="./stitch_roadshield_civic_safety_portal/roadshield-core.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.RoadShield) return;
+
+      // 1. Initialize Global Header & Navigation
+      RoadShield.setupGlobalHeaderAndNav('command-overview');
+
+      // 2. Render Metrics Strip
+      const metrics = RoadShield.getMetrics();
+      document.getElementById('kpi-total').textContent = metrics.totalReports;
+      document.getElementById('kpi-active').textContent = metrics.activeHazards;
+      document.getElementById('kpi-critical').textContent = metrics.criticalHotspots;
+      document.getElementById('kpi-pending').textContent = metrics.pendingVerification;
+      document.getElementById('kpi-interventions').textContent = metrics.activeInterventions;
+      document.getElementById('kpi-resolved').textContent = metrics.resolvedHazards;
+      document.getElementById('nav-hotspots-count').textContent = metrics.criticalHotspots;
+      document.getElementById('nav-alerts-count').textContent = metrics.pendingVerification;
+
+      // 3. Render Overview Table
+      const reports = RoadShield.getAllReports();
+      const tbody = document.getElementById('overview-reports-table-body');
+      tbody.innerHTML = '';
+
+      reports.forEach(report => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-surface-container/60 transition-colors cursor-pointer';
+
+        let badgeClass = 'bg-surface-container text-on-surface-variant';
+        if (report.status === 'assigned') badgeClass = 'bg-secondary-container text-on-secondary-container';
+        if (report.status === 'awaiting_verification') badgeClass = 'bg-error-container text-on-error-container';
+        if (report.status === 'in_progress') badgeClass = 'bg-surface-container-highest text-primary-container';
+        if (report.status === 'awaiting_inspection') badgeClass = 'bg-primary-container/20 text-primary-container border border-primary-container/40';
+        if (report.status === 'resolved') badgeClass = 'bg-surface-container-high text-primary-fixed';
+
+        let riskColor = 'text-primary';
+        if (report.riskScore >= 80) riskColor = 'text-error font-bold';
+        else if (report.riskScore >= 60) riskColor = 'text-secondary font-bold';
+
+        tr.innerHTML = `
+          <td class="py-2.5 px-3 font-semibold text-primary">#${report.id}</td>
+          <td class="py-2.5 px-3 font-medium text-on-surface">${report.categoryLabel}</td>
+          <td class="py-2.5 px-3 text-on-surface-variant text-[11px] truncate max-w-[200px]">${report.location}</td>
+          <td class="py-2.5 px-3 text-center ${riskColor}">
+            <span class="px-2 py-0.5 rounded bg-surface-container text-[11px]">${report.riskScore || 50}</span>
+          </td>
+          <td class="py-2.5 px-3">
+            <span class="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase ${badgeClass}">${report.statusLabel || report.status}</span>
+          </td>
+          <td class="py-2.5 px-3 text-on-surface-variant text-[11px]">${report.assignedCrew || 'Unassigned'}</td>
+          <td class="py-2.5 px-3 text-right">
+            <a href="./stitch_roadshield_civic_safety_portal/reports_and_complaints_management/code.html" class="p-1 rounded hover:bg-surface-container-highest text-primary inline-flex items-center" title="Inspect Ticket">
+              <span class="material-symbols-outlined text-[16px]">visibility</span>
+            </a>
+          </td>
+        `;
+
+        tr.addEventListener('click', (e) => {
+          if (!e.target.closest('a')) {
+            updateRiskSpotlight(report);
+          }
+        });
+
+        tbody.appendChild(tr);
+      });
+
+      // 4. Render Hazard Distribution Bars
+      const distributionContainer = document.getElementById('category-distribution-bars');
+      distributionContainer.innerHTML = '';
+      const catCounts = metrics.categoriesCount;
+      const total = metrics.totalReports || 1;
+
+      Object.keys(catCounts).forEach(cat => {
+        const count = catCounts[cat];
+        const pct = Math.round((count / total) * 100);
+        const label = RoadShield.getCategoryLabel(cat);
+        const item = document.createElement('div');
+        item.className = 'space-y-1';
+        item.innerHTML = `
+          <div class="flex justify-between items-center">
+            <span class="text-on-surface truncate">${label}</span>
+            <span class="text-primary font-semibold">${count} (${pct}%)</span>
+          </div>
+          <div class="w-full bg-surface-container-highest h-1 rounded overflow-hidden">
+            <div class="bg-primary-container h-full rounded" style="width: ${pct}%"></div>
+          </div>
+        `;
+        distributionContainer.appendChild(item);
+      });
+
+      // 5. Update Spotlight Function
+      function updateRiskSpotlight(report) {
+        document.getElementById('spotlight-title').textContent = `SELECTED NODE: #${report.id} // ${report.category.toUpperCase()}`;
+        document.getElementById('spotlight-score').textContent = `${report.riskScore} / 100`;
+        document.getElementById('spotlight-score').className = `font-telemetry-lg text-telemetry-lg font-bold ${report.riskBreakdown.tierColor}`;
+        document.getElementById('spotlight-bar').style.width = `${report.riskScore}%`;
+        document.getElementById('spotlight-bar').className = report.riskScore >= 80 ? 'bg-error h-full rounded' : (report.riskScore >= 60 ? 'bg-secondary h-full rounded' : 'bg-primary-container h-full rounded');
+
+        const factorsContainer = document.getElementById('spotlight-factors');
+        factorsContainer.innerHTML = '';
+        if (report.riskBreakdown && report.riskBreakdown.factors) {
+          report.riskBreakdown.factors.forEach(f => {
+            const div = document.createElement('div');
+            div.className = 'flex justify-between items-center text-on-surface';
+            div.innerHTML = `
+              <span class="text-on-surface-variant truncate pr-2">${f.name}</span>
+              <span class="text-primary font-semibold shrink-0">${f.points} / ${f.max} pts</span>
+            `;
+            factorsContainer.appendChild(div);
+          });
+        }
+      }
+
+      // Default spotlight to first report
+      if (reports.length > 0) {
+        updateRiskSpotlight(reports[0]);
+      }
+
+      // 6. Bind Sync Button
+      const syncBtn = document.getElementById('sync-now-btn');
+      const queueBadge = document.getElementById('queue-badge-widget');
+      const updateQueueBadge = () => {
+        const q = RoadShield.getOfflineQueue();
+        queueBadge.textContent = `${q.length} PENDING`;
+        queueBadge.className = q.length > 0 ? 'font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-bold' : 'font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container text-on-surface';
+      };
+      updateQueueBadge();
+
+      syncBtn.addEventListener('click', () => {
+        if (RoadShield.isOfflineMode()) {
+          RoadShield.showToast('Network is currently in Simulated Offline mode. Reconnect first.', 'warning');
+        } else {
+          const res = RoadShield.syncOfflineQueue();
+          if (res.syncedCount > 0) {
+            RoadShield.showToast(`Synced ${res.syncedCount} queued reports!`, 'cloud_done');
+            setTimeout(() => window.location.reload(), 400);
+          } else {
+            RoadShield.showToast('Queue is clear. No offline reports pending.', 'info');
+          }
+          updateQueueBadge();
+        }
+      });
+
+      // Global Search input filter
+      const searchInput = document.getElementById('global-search-input');
+      searchInput.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase();
+        const rows = tbody.querySelectorAll('tr');
+        rows.forEach(r => {
+          const text = r.textContent.toLowerCase();
+          r.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

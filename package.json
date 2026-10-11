@@ -1,0 +1,14 @@
+{
+  "name": "roadshield-civic-safety-portal",
+  "version": "2.4.0",
+  "description": "RoadShield — Turn Road Safety Data into Action // Civic Safety Command Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node tests/test_e2e_workflow.js"
+  },
+  "keywords": ["civic-tech", "road-safety", "vision-zero", "tactical-command", "hackathon"],
+  "author": "RoadShield Team",
+  "license": "MIT"
+}

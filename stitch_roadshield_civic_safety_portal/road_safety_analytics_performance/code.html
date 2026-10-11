@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#dfe2f0", "surface-container": "#1b2029", "primary": "#dbfcff", "on-error-container": "#ffdad6", "inverse-on-surface": "#2c303b", "on-secondary-fixed-variant": "#004e5c", "surface-container-low": "#171c25", "tertiary-fixed": "#ffd9dc", "primary-fixed": "#7df4ff", "on-tertiary-fixed-variant": "#910030", "surface-tint": "#00dbe9", "tertiary-fixed-dim": "#ffb2ba", "on-error": "#690005", "error": "#ffb4ab", "on-tertiary": "#670020", "background": "#0f131d", "secondary-container": "#03b5d3", "on-primary-container": "#006970", "surface-container-highest": "#31353f", "on-surface": "#dfe2f0", "on-primary-fixed": "#002022", "secondary-fixed-dim": "#4cd7f6", "surface-dim": "#0f131d", "surface-container-lowest": "#0a0e17", "on-primary-fixed-variant": "#004f54", "inverse-primary": "#006970", "on-secondary-container": "#00424e", "tertiary-container": "#ffcdd1", "secondary-fixed": "#acedff", "secondary": "#4cd7f6", "on-tertiary-container": "#be0042", "on-primary": "#00363a", "on-secondary": "#003640", "on-tertiary-fixed": "#400011", "on-secondary-fixed": "#001f26", "on-background": "#dfe2f0", "error-container": "#93000a", "surface-variant": "#31353f", "surface-bright": "#353944", "on-surface-variant": "#b9cacb", "surface-container-high": "#262a34", "primary-fixed-dim": "#00dbe9", "surface": "#0f131d", "outline": "#849495", "primary-container": "#00f0ff", "outline-variant": "#3b494b", "tertiary": "#fff3f3" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-lg": "1.25rem", "space-xs": "0.25rem", "space-md": "0.75rem", "space-sm": "0.5rem", "gutter": "0.75rem", "margin-desktop": "1.5rem", "gutter-desktop": "1rem", "margin": "1rem", "space-xl": "2rem" }, "fontFamily": { "label-md": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"], "label-caps": ["JetBrains Mono"], "telemetry-sm": ["JetBrains Mono"], "headline-md": ["Inter"], "telemetry-md": ["JetBrains Mono"], "telemetry-lg": ["JetBrains Mono"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-xl": ["Inter"], "headline-lg": ["Inter"], "headline-xl-mobile": ["Inter"] }, "fontSize": { "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }], "telemetry-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "telemetry-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }], "telemetry-lg": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface-container-lowest font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest border-r border-outline-variant/40 z-50 flex flex-col justify-between select-none"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-md border-b border-outline-variant/30 flex items-center gap-space-sm bg-surface-container-low/40"><div class="w-8 h-8 rounded bg-surface-container-highest border border-primary-container/40 flex items-center justify-center text-primary-container shadow-[0_0_8px_rgba(0,240,255,0.15)]"><span class="material-symbols-outlined text-[20px]">shield</span></div><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-primary-container tracking-wider truncate">ROADSHIELD // PILOT v2.4</span><span class="font-telemetry-sm text-[9px] text-on-surface-variant truncate uppercase tracking-tight">CIVIC SAFETY COMMAND // METRO CENTRAL</span></div></div><nav class="flex-1 overflow-y-auto px-space-sm py-space-md space-y-1" data-active-classes="bg-surface-container-high text-primary-container border-l-2 border-primary-container shadow-[inset_0_0_12px_rgba(0,240,255,0.06)]"><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="command-overview" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">grid_view</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Command Overview</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-risk-map" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">location_on</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Live Risk Map</span></div><span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-error-container text-on-error-container border border-error/40">18</span></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="report-a-hazard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">warning</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Report a Hazard</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reports-and-complaints" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">description</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Reports & Complaints</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="hotspot-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bolt</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Hotspot Analytics</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="response-operations" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">local_shipping</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Response Operations</span></div></a><a aria-current="page" class="group flex items-center justify-between px-space-sm py-space-xs rounded transition-all bg-surface-container-high text-primary-container border-l-2 border-primary-container shadow-[inset_0_0_12px_rgba(0,240,255,0.06)]" data-path="road-safety-analytics" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bar_chart</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Road Safety Analytics</span></div></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="alerts-and-notifications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">notifications</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Alerts & Notifications</span></div><span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary border border-secondary-container/40">3</span></a><a class="group flex items-center justify-between px-space-sm py-space-xs rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings-and-system-configuration" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-telemetry-sm text-telemetry-sm uppercase tracking-wide">Settings & Config</span></div></a></nav></div><div class="p-space-md border-t border-outline-variant/30 bg-surface-container-low/30 space-y-2"><div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant"><span>SYSTEM TELEMETRY</span><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span></div><div class="space-y-1.5 font-telemetry-sm text-[10px]"><div class="flex justify-between items-center text-on-surface-variant"><span>LiDAR ARRAY</span><span class="text-primary font-semibold">99.2% NOMINAL</span></div><div class="flex justify-between items-center text-on-surface-variant"><span>DASHCAMS ACTIVE</span><span class="text-primary font-semibold">142/150</span></div><div class="flex justify-between items-center text-on-surface-variant"><span>311 CIVIC FEED</span><span class="text-secondary font-semibold">SYNCING...</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant/30 z-40 flex items-center justify-between px-margin-desktop"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low border border-outline-variant/40 rounded px-space-sm py-1.5"><span class="material-symbols-outlined text-primary-container text-[16px]">corporate_fare</span><span class="font-telemetry-sm text-telemetry-sm text-on-surface uppercase">Ward 4: Metro Central</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-[16px]">search</span><input class="bg-surface-container-lowest border border-outline-variant/40 rounded pl-8 pr-12 py-1.5 font-telemetry-sm text-telemetry-sm text-on-surface placeholder-on-surface-variant/50 focus:outline-none focus:border-primary-container w-72 lg:w-96" placeholder="Search hazards, coordinates, unit IDs..." type="text"/><span class="absolute right-2 font-telemetry-sm text-[10px] px-1 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-outline-variant/40">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs bg-surface-container-low border border-primary-container/30 rounded px-space-sm py-1"><span class="material-symbols-outlined text-primary-container text-[14px]">speed</span><span class="font-telemetry-sm text-telemetry-sm text-primary-container">GIS LATENCY: 14ms</span></div><div class="hidden lg:flex items-center gap-space-xs bg-error-container/20 border border-error/50 rounded px-space-sm py-1"><span class="inline-block w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span><span class="font-telemetry-sm text-telemetry-sm text-error uppercase">AI DETECTOR: ACTIVE</span></div><button class="relative p-1.5 rounded bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/40 text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute -top-1 -right-1 font-telemetry-sm text-[9px] px-1 rounded bg-error text-on-error font-bold">5</span></button><a class="flex items-center gap-1.5 bg-primary-container text-on-primary font-label-caps text-label-caps px-space-sm py-2 rounded font-bold uppercase tracking-wider hover:bg-primary-fixed-dim transition-all shadow-[0_0_10px_rgba(0,240,255,0.25)]" data-path="report-a-hazard" href="#"><span class="material-symbols-outlined text-[16px]">add_alert</span><span>+ Report Hazard</span></a><div class="h-6 w-px bg-outline-variant/40"></div><div class="flex items-center gap-space-sm"><div class="text-right hidden sm:block"><div class="font-telemetry-sm text-telemetry-sm text-on-surface font-semibold leading-tight">Elena Vance</div><div class="font-telemetry-sm text-[10px] text-on-surface-variant leading-tight">Operations Lead</div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center font-telemetry-sm text-on-primary text-[11px] font-bold ring-1 ring-primary-container/50">EV</div></div></div></header><main class="relative w-full pt-16 bg-surface-container-lowest min-h-screen"><div class="flex flex-col w-full">
+<!-- Analytics Command Canvas -->
+<div class="p-margin-desktop space-y-gutter-desktop">
+<!-- Top Command Strip & Filter HUD -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-primary-container/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-wider">CIVIC TELEMETRY ENGINE // WARD 4 SECTOR AUDIT</span>
+<span class="font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-medium">STREAMING 60s INTERVALS</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary font-bold tracking-tight">ROAD SAFETY INTELLIGENCE & PERFORMANCE ANALYTICS</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+            Cross-departmental telemetry, hazard mitigation trends, response latency benchmarks, and Vision Zero progress.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm pt-2 xl:pt-0">
+<button class="flex items-center gap-2 px-space-md py-2 bg-surface-container-high hover:bg-surface-container-highest text-primary font-telemetry-sm text-telemetry-sm rounded shadow-sm transition-all duration-200" id="export-pdf-btn">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>Export Briefing PDF</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2 bg-primary-container text-on-primary font-telemetry-sm text-telemetry-sm font-semibold rounded shadow-[0_0_15px_rgba(0,240,255,0.25)] hover:bg-primary-fixed-dim transition-all duration-200" id="export-csv-btn">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span>Download Raw CSV</span>
+</button>
+</div>
+</div>
+<!-- Tactical Filtering Bar -->
+<div class="mt-space-lg pt-space-md flex flex-wrap items-center gap-space-sm bg-surface-container-lowest/70 p-space-sm rounded-lg backdrop-blur">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded text-on-surface">
+<span class="material-symbols-outlined text-primary-container text-[16px]">calendar_today</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Timeframe:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-primary">Last 30 Days</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">arrow_drop_down</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[16px]">map</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Jurisdiction:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-primary">Metro Central - Ward 4</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">arrow_drop_down</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded text-on-surface">
+<span class="material-symbols-outlined text-error text-[16px]">warning</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Hazard:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-primary">All Types (5 Active)</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">arrow_drop_down</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container-high rounded text-on-surface">
+<span class="material-symbols-outlined text-surface-tint text-[16px]">account_balance</span>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">Authority:</span>
+<span class="font-telemetry-sm text-telemetry-sm font-semibold text-primary">All Municipal Units</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant cursor-pointer">arrow_drop_down</span>
+</div>
+<div class="ml-auto flex items-center gap-2 text-on-surface-variant font-telemetry-sm text-telemetry-sm pr-2">
+<span class="material-symbols-outlined text-[16px] text-primary-container">sync</span>
+<span>LAST SYNC: 10:42:18 AM EST</span>
+</div>
+</div>
+</div>
+<!-- Top Telemetry KPI Row: 5 Circular Radial Gauges -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- Gauge 1: Municipal Safety Index (Grade F / Surge) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">MUNICIPAL SAFETY INDEX</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-bold">GRADE F</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-error" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="54, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-error">54</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant -mt-1">/ 100</span>
+</div>
+</div>
+<div class="space-y-0.5 min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_downward</span> High Surge
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Rainfall degradation impact recorded.</p>
+</div>
+</div>
+<div class="pt-2 text-on-surface-variant font-telemetry-sm text-[10px] flex justify-between">
+<span>Target baseline: 80+</span>
+<span class="text-error font-semibold">-12.4% vs 60D</span>
+</div>
+</div>
+<!-- Gauge 2: SLA Clearance Rate -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">SLA CLEARANCE RATE</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-primary-container font-bold">GRADE A</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" fill="none" stroke="currentColor" stroke-dasharray="88.4, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-primary">88.4%</span>
+</div>
+</div>
+<div class="space-y-0.5 min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-primary-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> +3.4% SLA
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Target: 85.0% threshold.</p>
+</div>
+</div>
+<div class="pt-2 text-on-surface-variant font-telemetry-sm text-[10px] flex justify-between">
+<span>Benchmarked 30D</span>
+<span class="text-primary-container font-semibold">Exceeding SLA</span>
+</div>
+</div>
+<!-- Gauge 3: Hazards Resolved (30D) -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">HAZARDS RESOLVED</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary-fixed-dim font-bold">30D VELOCITY</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" fill="none" stroke="currentColor" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-secondary">312</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant -mt-1">FIXED</span>
+</div>
+</div>
+<div class="space-y-0.5 min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +28% MoM
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">68 fast cold-patches.</p>
+</div>
+</div>
+<div class="pt-2 text-on-surface-variant font-telemetry-sm text-[10px] flex justify-between">
+<span>Active backlog: 41</span>
+<span class="text-secondary font-semibold">Triage Optimal</span>
+</div>
+</div>
+<!-- Gauge 4: Average Response Time -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">AVG RESPONSE TIME</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-secondary-container font-bold">LATENCY</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary-fixed-dim" fill="none" stroke="currentColor" stroke-dasharray="64, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-telemetry-md text-telemetry-md font-bold text-on-surface">3h 24m</span>
+</div>
+</div>
+<div class="space-y-0.5 min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-secondary-fixed-dim font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> -18m Imprv
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Fastest: Signal Ops (1h12m)</p>
+</div>
+</div>
+<div class="pt-2 text-on-surface-variant font-telemetry-sm text-[10px] flex justify-between">
+<span>Target: < 4h 00m</span>
+<span class="text-secondary-fixed-dim font-semibold">Nominal</span>
+</div>
+</div>
+<!-- Gauge 5: Repeat Hazard Incidence -->
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col justify-between relative group hover:bg-surface-container transition-all">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">REPEAT INCIDENCE</span>
+<span class="font-telemetry-sm text-telemetry-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-primary-fixed-dim font-bold">V-ZERO</span>
+</div>
+<div class="flex items-center gap-4 my-2">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-fixed-dim" fill="none" stroke="currentColor" stroke-dasharray="42, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-telemetry-lg text-telemetry-lg font-bold text-primary-fixed-dim">4.2%</span>
+</div>
+</div>
+<div class="space-y-0.5 min-w-0">
+<span class="font-telemetry-sm text-telemetry-sm text-primary-fixed-dim font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Target Met
+            </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Vision Zero goal: < 5.0%</p>
+</div>
+</div>
+<div class="pt-2 text-on-surface-variant font-telemetry-sm text-[10px] flex justify-between">
+<span>Tolerance: low</span>
+<span class="text-primary-fixed-dim font-semibold">Safe Threshold</span>
+</div>
+</div>
+</div>
+<!-- Analytics Tactical Grid: 4 Core Modules -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop">
+<!-- Chart 1: Hazard Ingestion vs Resolution Velocity (Dual Area / Line Graph) -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-xl p-space-lg shadow-xl relative overflow-hidden flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[18px]">timeline</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">HAZARD INGESTION VS RESOLUTION VELOCITY (30-DAY TIMELINE)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Daily volume comparison: intake surge events vs crew completion rate across Ward 4.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="w-3 h-1.5 rounded-full bg-error inline-block"></span>
+<span>Ingested (Peak 68/d)</span>
+</div>
+<div class="flex items-center gap-1.5 font-telemetry-sm text-telemetry-sm text-on-surface-variant">
+<span class="w-3 h-1.5 rounded-full bg-secondary inline-block"></span>
+<span>Completed (Avg 55/d)</span>
+</div>
+</div>
+</div>
+<!-- SVG Timeline Chart with Incident Annotations -->
+<div class="relative w-full h-72 my-2 bg-surface-container-lowest/80 rounded-lg p-space-md flex flex-col justify-between">
+<!-- Weather / Surge Callout Badge -->
+<div class="absolute left-[45%] top-4 z-10 bg-surface-container-highest/95 p-2 rounded shadow-lg backdrop-blur pointer-events-none">
+<div class="flex items-center gap-1.5 text-error font-telemetry-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[14px]">thunderstorm</span>
+<span>DAY 14: SEVERE STORM SURGE</span>
+</div>
+<p class="font-telemetry-sm text-[10px] text-on-surface-variant mt-0.5">Ingested: 68 hazards | Road washouts & sinkholes</p>
+</div>
+<!-- Vector Chart Body -->
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 800 220">
+<defs>
+<lineargradient id="gradient-ingested" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ffb4ab" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#ffb4ab" stop-opacity="0.0"></stop>
+</lineargradient>
+<lineargradient id="gradient-resolved" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4cd7f6" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#4cd7f6" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Grid Lines -->
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="800" y1="40" y2="40"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="800" y1="90" y2="90"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="800" y1="140" y2="140"></line>
+<line class="text-surface-container-highest" stroke="currentColor" stroke-dasharray="3 3" x1="0" x2="800" y1="190" y2="190"></line>
+<!-- Day 14 Surge Line Marker -->
+<line opacity="0.6" stroke="#ffb4ab" stroke-dasharray="2 2" stroke-width="1.5" x1="375" x2="375" y1="0" y2="200"></line>
+<!-- Area: Ingested Hazards -->
+<path d="M 0 160 
+                     Q 80 140, 150 150 
+                     T 250 130 
+                     T 340 100 
+                     L 375 25 
+                     L 410 70 
+                     T 520 120 
+                     T 640 135 
+                     T 740 110 
+                     L 800 125 
+                     L 800 200 L 0 200 Z" fill="url(#gradient-ingested)"></path>
+<!-- Area: Resolved Velocity -->
+<path d="M 0 170 
+                     Q 70 165, 140 155 
+                     T 260 140 
+                     T 360 130 
+                     L 375 125 
+                     L 430 85 
+                     T 530 80 
+                     T 650 90 
+                     T 730 75 
+                     L 800 70 
+                     L 800 200 L 0 200 Z" fill="url(#gradient-resolved)"></path>
+<!-- Line: Ingested Hazards (Crimson / Error) -->
+<path d="M 0 160 
+                     Q 80 140, 150 150 
+                     T 250 130 
+                     T 340 100 
+                     L 375 25 
+                     L 410 70 
+                     T 520 120 
+                     T 640 135 
+                     T 740 110 
+                     L 800 125" fill="none" stroke="#ffb4ab" stroke-width="2.5"></path>
+<!-- Peak Surge Point -->
+<circle class="animate-ping" cx="375" cy="25" fill="#ffb4ab" opacity="0.75" r="4.5"></circle>
+<circle cx="375" cy="25" fill="#93000a" r="4" stroke="#ffb4ab" stroke-width="2"></circle>
+<!-- Line: Resolved Hazards (Cyan / Secondary) -->
+<path d="M 0 170 
+                     Q 70 165, 140 155 
+                     T 260 140 
+                     T 360 130 
+                     L 375 125 
+                     L 430 85 
+                     T 530 80 
+                     T 650 90 
+                     T 730 75 
+                     L 800 70" fill="none" stroke="#4cd7f6" stroke-width="2.5"></path>
+<circle cx="800" cy="70" fill="#03b5d3" r="3.5" stroke="#dbfcff" stroke-width="1.5"></circle>
+</svg>
+<!-- Timeline Axis Labels -->
+<div class="flex justify-between items-center text-on-surface-variant font-telemetry-sm text-[10px] pt-1 border-t-0">
+<span>DAY 01 (Oct 1)</span>
+<span>DAY 08</span>
+<span class="text-error font-bold">DAY 14 (Surge)</span>
+<span>DAY 21</span>
+<span>DAY 28</span>
+<span>DAY 30 (Current)</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-2 pt-2 text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[16px]">info</span>
+<span>Post-storm recovery: Resolution velocity increased by 42% over 72 hours via deployed Taskforce Alpha.</span>
+</div>
+<span class="font-bold text-primary">CUMULATIVE DELTA: +56 HAZARDS CLEARED</span>
+</div>
+</div>
+<!-- Chart 2: Risk Distribution by Hazard Classification -->
+<div class="lg:col-span-4 bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">pie_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">RISK DISTRIBUTION</h2>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm text-on-surface-variant">1,284 TOTAL</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Weighted hazard severity scoring across Ward 4 road infrastructure.</p>
+<!-- Segmented Category Bars -->
+<div class="space-y-space-md">
+<!-- Potholes / Voids -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded bg-error inline-block"></span>
+                  Asphalt Craters & Structural Voids
+                </span>
+<span class="text-error font-bold">38% (488)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-error h-full rounded-full transition-all duration-500" style="width: 38%;"></div>
+</div>
+<div class="flex justify-between font-telemetry-sm text-[10px] text-on-surface-variant">
+<span>Severe tire puncture & crash risk</span>
+<span class="text-error uppercase">High Priority</span>
+</div>
+</div>
+<!-- Signal Failures -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded bg-error-container inline-block"></span>
+                  Traffic Signals & Controller Hardware
+                </span>
+<span class="text-error font-bold">24% (308)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-error-container h-full rounded-full transition-all duration-500" style="width: 24%;"></div>
+</div>
+<div class="flex justify-between font-telemetry-sm text-[10px] text-on-surface-variant">
+<span>Gridlock & intersection blind risk</span>
+<span class="text-error uppercase">Critical Risk</span>
+</div>
+</div>
+<!-- Obstructions -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded bg-secondary-container inline-block"></span>
+                  Blindspots & Line-of-Sight Obstructions
+                </span>
+<span class="text-secondary font-bold">18% (231)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full rounded-full transition-all duration-500" style="width: 18%;"></div>
+</div>
+<div class="flex justify-between font-telemetry-sm text-[10px] text-on-surface-variant">
+<span>Foliage, illegal dumps & scaffolding</span>
+<span class="text-secondary uppercase">Elevated Risk</span>
+</div>
+</div>
+<!-- Speed Corridors -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded bg-primary-container inline-block"></span>
+                  Speeding Corridors / Near-Misses
+                </span>
+<span class="text-primary-container font-bold">12% (154)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 12%;"></div>
+</div>
+<div class="flex justify-between font-telemetry-sm text-[10px] text-on-surface-variant">
+<span>Radar feedback & optical sensors</span>
+<span class="text-primary-container uppercase">Moderate Risk</span>
+</div>
+</div>
+<!-- Street Lighting -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center font-telemetry-sm text-telemetry-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded bg-on-surface-variant inline-block"></span>
+                  Inadequate Street Lighting
+                </span>
+<span class="text-on-surface font-bold">8% (103)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden flex">
+<div class="bg-on-surface-variant h-full rounded-full transition-all duration-500" style="width: 8%;"></div>
+</div>
+<div class="flex justify-between font-telemetry-sm text-[10px] text-on-surface-variant">
+<span>Pedestrian night crossing zones</span>
+<span class="text-on-surface-variant uppercase">Moderate Risk</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container-lowest rounded-lg flex items-center justify-between text-on-surface font-telemetry-sm text-telemetry-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[16px]">priority_high</span>
+<span>Dominant Category:</span>
+</div>
+<span class="font-bold text-primary">STRUCTURAL VOIDS (488)</span>
+</div>
+</div>
+<!-- Chart 3: Departmental SLA Performance & Benchmarking Table -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[18px]">verified_user</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">DEPARTMENTAL SLA BENCHMARKING</h2>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded bg-surface-container-highest text-primary">346 ASSIGNED TASKS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Mean Time to Resolve (TTR) and dispatch adherence across municipal units.</p>
+<!-- Dense Tactical List / Table -->
+<div class="space-y-space-xs">
+<!-- Unit 1: DPW Roads -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">construction</span>
+</div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">Dept of Public Works (Roads)</div>
+<div class="font-telemetry-sm text-[11px] text-on-surface-variant">148 Tasks Dispatched • Mean TTR: 2h 45m</div>
+</div>
+</div>
+<div class="flex items-center gap-4 self-end sm:self-center">
+<div class="text-right">
+<div class="font-telemetry-md text-telemetry-md text-primary font-bold">92.4%</div>
+<div class="font-telemetry-sm text-[10px] text-primary-container">ON-TIME SLA</div>
+</div>
+<div class="px-2.5 py-1 rounded bg-surface-container-highest text-primary-container font-telemetry-sm text-telemetry-sm font-bold shadow-sm">
+                  GRADE A
+                </div>
+</div>
+</div>
+<!-- Unit 2: Municipal Electrical Unit -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">Municipal Electrical Unit</div>
+<div class="font-telemetry-sm text-[11px] text-on-surface-variant">92 Tasks Dispatched • Mean TTR: 3h 50m</div>
+</div>
+</div>
+<div class="flex items-center gap-4 self-end sm:self-center">
+<div class="text-right">
+<div class="font-telemetry-md text-telemetry-md text-secondary font-bold">86.1%</div>
+<div class="font-telemetry-sm text-[10px] text-secondary">ON-TIME SLA</div>
+</div>
+<div class="px-2.5 py-1 rounded bg-surface-container-highest text-secondary font-telemetry-sm text-telemetry-sm font-bold shadow-sm">
+                  GRADE B+
+                </div>
+</div>
+</div>
+<!-- Unit 3: Traffic Police Division -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined text-[20px]">local_police</span>
+</div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">Traffic Police Division</div>
+<div class="font-telemetry-sm text-[11px] text-on-surface-variant">64 Tasks Dispatched • Mean TTR: 1h 12m</div>
+</div>
+</div>
+<div class="flex items-center gap-4 self-end sm:self-center">
+<div class="text-right">
+<div class="font-telemetry-md text-telemetry-md text-primary-fixed-dim font-bold">94.0%</div>
+<div class="font-telemetry-sm text-[10px] text-primary-fixed-dim">RAPID DISPATCH</div>
+</div>
+<div class="px-2.5 py-1 rounded bg-surface-container-highest text-primary-fixed-dim font-telemetry-sm text-telemetry-sm font-bold shadow-sm">
+                  GRADE A+
+                </div>
+</div>
+</div>
+<!-- Unit 4: Signage & Road Striping -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-l-2 border-error">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]">format_paint</span>
+</div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold">Signage & Road Striping</div>
+<div class="font-telemetry-sm text-[11px] text-on-surface-variant">42 Tasks Dispatched • Mean TTR: 6h 15m</div>
+</div>
+</div>
+<div class="flex items-center gap-4 self-end sm:self-center">
+<div class="text-right">
+<div class="font-telemetry-md text-telemetry-md text-error font-bold">78.5%</div>
+<div class="font-telemetry-sm text-[10px] text-error">NEEDS ESCALATION</div>
+</div>
+<div class="px-2.5 py-1 rounded bg-error-container text-on-error-container font-telemetry-sm text-telemetry-sm font-bold shadow-sm">
+                  GRADE C
+                </div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span class="flex items-center gap-1.5">
+<span class="inline-block w-2 h-2 rounded-full bg-error animate-ping"></span>
+            1 Unit Under Benchmark Threshold (80%)
+          </span>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container hover:text-on-primary text-primary-container rounded transition-colors text-[11px] font-semibold">
+            Reassign Workorders →
+          </button>
+</div>
+</div>
+<!-- Chart 4: Recurring Risk Hotspots & Vulnerable User Exposure -->
+<div class="lg:col-span-6 bg-surface-container-low rounded-xl p-space-lg shadow-xl flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">emergency_heat</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">RECURRING RISK HOTSPOTS</h2>
+</div>
+<span class="font-telemetry-sm text-telemetry-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">HIGH EXPOSURE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Ranked high-conflict intersections mapped by collision index and pedestrian vulnerability.</p>
+<!-- Hotspot Matrix Items -->
+<div class="space-y-space-xs">
+<!-- Hotspot 1 -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-telemetry-sm text-telemetry-sm font-bold">
+                  01
+                </div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold flex items-center gap-2">
+<span>Central Market Junction</span>
+<span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Zone 4B</span>
+</div>
+<div class="font-telemetry-sm text-[11px] text-error flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">article_shortcut</span>
+<span>Pedestrian Conflict: Critical Exposure (38 Reports)</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-lg text-telemetry-lg text-error font-bold">94</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant block uppercase">RISK SCORE</span>
+</div>
+</div>
+<!-- Hotspot 2 -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-error flex items-center justify-center font-telemetry-sm text-telemetry-sm font-bold">
+                  02
+                </div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold flex items-center gap-2">
+<span>North Ave & 4th Street</span>
+<span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Zone 4A</span>
+</div>
+<div class="font-telemetry-sm text-[11px] text-secondary-container flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">car_crash</span>
+<span>Collision History: 3 in past 6 months (29 Reports)</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-lg text-telemetry-lg text-secondary-container font-bold">88</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant block uppercase">RISK SCORE</span>
+</div>
+</div>
+<!-- Hotspot 3 -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-secondary flex items-center justify-center font-telemetry-sm text-telemetry-sm font-bold">
+                  03
+                </div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold flex items-center gap-2">
+<span>University Ave School Gate</span>
+<span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Zone 4C</span>
+</div>
+<div class="font-telemetry-sm text-[11px] text-secondary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">school</span>
+<span>School Zone <300m | Morning Crossing (21 Reports)</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-lg text-telemetry-lg text-secondary font-bold">76</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant block uppercase">RISK SCORE</span>
+</div>
+</div>
+<!-- Hotspot 4 -->
+<div class="p-space-md bg-surface-container rounded-lg hover:bg-surface-container-high transition-all flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-primary-container flex items-center justify-center font-telemetry-sm text-telemetry-sm font-bold">
+                  04
+                </div>
+<div>
+<div class="font-telemetry-md text-telemetry-md text-on-surface font-semibold flex items-center gap-2">
+<span>Tech Pkwy & 2nd St</span>
+<span class="font-telemetry-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">Zone 4D</span>
+</div>
+<div class="font-telemetry-sm text-[11px] text-primary-container flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">directions_bike</span>
+<span>Bicycle Corridor Blind Corner (17 Reports)</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-telemetry-lg text-telemetry-lg text-primary-container font-bold">68</span>
+<span class="font-telemetry-sm text-[9px] text-on-surface-variant block uppercase">RISK SCORE</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-telemetry-sm text-telemetry-sm">
+<span>Targeting automated traffic-calming radar</span>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-secondary-container hover:text-on-secondary text-secondary rounded transition-colors text-[11px] font-semibold">
+            Inspect GIS Heatmap →
+          </button>
+</div>
+</div>
+</div>
+<!-- Bottom Civic Outcomes Banner: Vision Zero Audit -->
+<div class="bg-gradient-to-r from-surface-container-low via-surface-container to-surface-container-low rounded-xl p-space-lg shadow-xl relative overflow-hidden">
+<div class="absolute -left-10 top-0 bottom-0 w-32 bg-primary-container/10 blur-2xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-surface-container-highest text-primary-container flex items-center justify-center shadow-[0_0_12px_rgba(0,240,255,0.2)] flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">verified</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary-container uppercase tracking-wide">POLICY PERFORMANCE IMPACT</span>
+<span class="font-telemetry-sm text-[10px] px-1.5 py-0.2 rounded bg-surface-container-highest text-secondary font-bold">AUDIT v2.4 VALIDATED</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary font-semibold">
+              VISION ZERO AUDIT OUTCOME: 14% Reduction in High-Speed Conflict Events
+            </div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Across Ward 4 following rapid cold-patch filling and autonomous traffic signal interval interventions (Sample Simulation Data).
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<div class="text-right">
+<div class="font-telemetry-lg text-telemetry-lg font-bold text-primary-container">-14.2%</div>
+<div class="font-telemetry-sm text-[10px] text-on-surface-variant">FATALITY EXPOSURE RISK</div>
+</div>
+<button class="px-space-md py-2.5 rounded bg-surface-container-highest hover:bg-primary-container hover:text-on-primary text-primary transition-all font-telemetry-sm text-telemetry-sm font-bold flex items-center gap-1.5">
+<span>View Full Audit</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script src="../roadshield-core.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (!window.RoadShield) return;
+
+      // 1. Setup Global Nav & Role Switcher
+      RoadShield.setupGlobalHeaderAndNav('road-safety-analytics');
+
+      // 2. Hydrate dynamic metrics
+      const metrics = RoadShield.getMetrics();
+
+      // Gauge 1: Municipal Safety Index based on active critical count
+      const safetyGaugeVal = document.querySelector('.grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-5 > div:nth-child(1) .font-telemetry-lg');
+      if (safetyGaugeVal) {
+        const computedIndex = Math.max(20, Math.min(95, 100 - metrics.criticalHotspots * 12));
+        safetyGaugeVal.textContent = computedIndex;
+      }
+
+      // Gauge 3: Hazards Resolved
+      const resolvedVal = document.querySelector('.grid.grid-cols-1.sm\\:grid-cols-2.lg\\:grid-cols-5 > div:nth-child(3) .font-telemetry-lg');
+      if (resolvedVal) {
+        resolvedVal.textContent = metrics.resolvedHazards;
+      }
+
+      // 3. Export Briefing PDF Toast Simulation
+      const exportPdf = document.getElementById('export-pdf-btn');
+      if (exportPdf) {
+        exportPdf.addEventListener('click', () => {
+          RoadShield.showToast('Compiling Executive Briefing PDF for Ward 4 (Vision Zero)...', 'picture_as_pdf');
+        });
+      }
+
+      // 4. Real CSV Download
+      const exportCsv = document.getElementById('export-csv-btn');
+      if (exportCsv) {
+        exportCsv.addEventListener('click', () => {
+          const reports = RoadShield.getAllReports();
+          const headers = ['ID', 'Category', 'Title', 'Location', 'Severity', 'RiskScore', 'Status', 'AssignedDept', 'CreatedAt'];
+          const csvRows = [headers.join(',')];
+          reports.forEach(r => {
+            csvRows.push([
+              `"${r.id}"`,
+              `"${r.category}"`,
+              `"${(r.title || '').replace(/"/g, '""')}"`,
+              `"${(r.location || '').replace(/"/g, '""')}"`,
+              `"${r.severity}"`,
+              r.riskScore || 0,
+              `"${r.status}"`,
+              `"${(r.assignedDepartment || '').replace(/"/g, '""')}"`,
+              `"${r.createdAt}"`
+            ].join(','));
+          });
+          const blob = new Blob([csvRows.join('\n')], { type: 'text/csv' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `roadshield_analytics_telemetry_${new Date().toISOString().split('T')[0]}.csv`;
+          a.click();
+          RoadShield.showToast('Exported raw incident telemetry dataset (.CSV)', 'download');
+        });
+      }
+    });
+</script>
+</div></main></div></body></html>
